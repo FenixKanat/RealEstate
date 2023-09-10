@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal class Institutional
+    internal class Institutional:IEstate
     {
     }
 }

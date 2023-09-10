@@ -21,5 +21,20 @@ namespace RealEstate
         {
 
         }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Change_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

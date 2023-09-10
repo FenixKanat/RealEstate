@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal class Residential : IEstate
+    internal class Villa:Residential
     {
     }
 }
