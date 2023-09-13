@@ -8,5 +8,9 @@ namespace RealEstate
 {
     internal class Residential : IEstate
     {
+        public String ID { get; set; }
+        public Address Address { get; set; }
+
+       // public abstract void DisplayDetails() { }
     }
 }
