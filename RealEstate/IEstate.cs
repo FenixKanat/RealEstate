@@ -9,5 +9,7 @@ namespace RealEstate
 {
     internal interface IEstate
     {
+        string ID { get; set; }
+        Address Address { get; set; }
     }
 }
