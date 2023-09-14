@@ -31,11 +31,14 @@
             this.Add = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Change = new System.Windows.Forms.Button();
+            this.commercial = new System.Windows.Forms.GroupBox();
+            this.residential = new System.Windows.Forms.GroupBox();
+            this.institutional = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(561, 78);
+            this.Add.Location = new System.Drawing.Point(540, 12);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(86, 44);
             this.Add.TabIndex = 0;
@@ -45,7 +48,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(561, 128);
+            this.Delete.Location = new System.Drawing.Point(660, 16);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(86, 37);
             this.Delete.TabIndex = 1;
@@ -55,7 +58,7 @@
             // 
             // Change
             // 
-            this.Change.Location = new System.Drawing.Point(561, 171);
+            this.Change.Location = new System.Drawing.Point(772, 16);
             this.Change.Name = "Change";
             this.Change.Size = new System.Drawing.Size(86, 44);
             this.Change.TabIndex = 2;
@@ -63,11 +66,44 @@
             this.Change.UseVisualStyleBackColor = true;
             this.Change.Click += new System.EventHandler(this.Change_Click);
             // 
+            // commercial
+            // 
+            this.commercial.Location = new System.Drawing.Point(51, 44);
+            this.commercial.Name = "commercial";
+            this.commercial.Size = new System.Drawing.Size(200, 100);
+            this.commercial.TabIndex = 3;
+            this.commercial.TabStop = false;
+            this.commercial.Text = "commercial";
+            this.commercial.Enter += new System.EventHandler(this.commercial_Enter);
+            // 
+            // residential
+            // 
+            this.residential.Location = new System.Drawing.Point(318, 44);
+            this.residential.Name = "residential";
+            this.residential.Size = new System.Drawing.Size(200, 100);
+            this.residential.TabIndex = 4;
+            this.residential.TabStop = false;
+            this.residential.Text = "residential";
+            this.residential.Enter += new System.EventHandler(this.residential_Enter);
+            // 
+            // institutional
+            // 
+            this.institutional.Location = new System.Drawing.Point(51, 216);
+            this.institutional.Name = "institutional";
+            this.institutional.Size = new System.Drawing.Size(200, 100);
+            this.institutional.TabIndex = 5;
+            this.institutional.TabStop = false;
+            this.institutional.Text = "institutional";
+            this.institutional.Enter += new System.EventHandler(this.institutional_Enter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(954, 572);
+            this.Controls.Add(this.institutional);
+            this.Controls.Add(this.residential);
+            this.Controls.Add(this.commercial);
             this.Controls.Add(this.Change);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Add);
@@ -83,6 +119,9 @@
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Change;
+        private System.Windows.Forms.GroupBox commercial;
+        private System.Windows.Forms.GroupBox residential;
+        private System.Windows.Forms.GroupBox institutional;
     }
 }
 

@@ -36,5 +36,20 @@ namespace RealEstate
         {
 
         }
+
+        private void commercial_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void residential_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void institutional_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
