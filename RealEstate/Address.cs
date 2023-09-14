@@ -14,6 +14,6 @@ namespace RealEstate
 
         public string City { get; set; }
 
-        public Countries County { get; set; }
+        public Countries Countries { get; set; }
     }
 }

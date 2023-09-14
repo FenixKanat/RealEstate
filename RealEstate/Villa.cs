@@ -18,7 +18,7 @@ namespace RealEstate
 
         public override void DisplayDetails() {
             Console.WriteLine($"Villa ID: {ID}");
-            Console.WriteLine($"Address: {Address.Street}, {Address.City}, {Address.ZipCode}, {Address.Country}");
+            Console.WriteLine($"Address: {Address.Street}, {Address.City}, {Address.ZipCode}, {Address.Countries}");
             Console.WriteLine($"Number of rooms: {numOfRoomsInTotal}");
             Console.WriteLine($"Number of guest rooms: {numOfGuestRooms}");
             Console.WriteLine($"Number of bed rooms: {numOfBedRooms}");
