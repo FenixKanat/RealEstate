@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal class Commercial:IEstate
+    internal abstract class Commercial:IEstate
     {
+        public string ID { get; set; }
+        public Address Address { get; set; }
+
+        public abstract void DisplayDetails();
+
     }
 }

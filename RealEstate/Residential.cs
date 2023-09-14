@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal class Residential : IEstate
+    internal abstract class Residential : IEstate
     {
         public String ID { get; set; }
         public Address Address { get; set; }
 
-       // public abstract void DisplayDetails() { }
+        public abstract void DisplayDetails();
     }
 }
