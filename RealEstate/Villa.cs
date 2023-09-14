@@ -9,21 +9,18 @@ namespace RealEstate
     internal class Villa:Residential
     {
 
-        public int numOfRoomsInTotal { get; set; }
-        public int numOfGuestRooms { get; set; }
-        public int numOfBedRooms { get; set; }
-        public int numOfWc { get; set; }
-        public double villaSize { get; set; }
+        public int numOfRooms { get; set; }
+        public int villaRent { get; set; }
+        public int villeSize { get; set; }
+      
 
 
         public override void DisplayDetails() {
             Console.WriteLine($"Villa ID: {ID}");
-            Console.WriteLine($"Address: {Address.Street}, {Address.City}, {Address.ZipCode}, {Address.Countries}");
-            Console.WriteLine($"Number of rooms: {numOfRoomsInTotal}");
-            Console.WriteLine($"Number of guest rooms: {numOfGuestRooms}");
-            Console.WriteLine($"Number of bed rooms: {numOfBedRooms}");
-            Console.WriteLine($"Number of WC: { numOfWc}");
-            Console.WriteLine($"Villa size: {villaSize}");
+            Console.WriteLine($"Villa Address: {Address.Street}, {Address.City}, {Address.ZipCode}, {Address.Countries}");
+            Console.WriteLine($"Number of rooms: {numOfRooms}");
+            Console.WriteLine($"Villa size: {villeSize}");
+            Console.WriteLine($"Villa rent: {villaRent}");
         }
 
 
