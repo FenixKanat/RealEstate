@@ -20,6 +20,16 @@ namespace RealEstate
         {
             InitializeComponent();
             initializeGUI();
+            residential = new Apartment();
+            residential = new Townhouse();
+            residential = new Villa();
+
+            institutional = new Hospital();
+            institutional = new School();
+            institutional = new University();
+
+            commercial = new Store();
+            commercial = new Warehouse();
         }
 
         private void initializeGUI() {
@@ -258,6 +268,13 @@ namespace RealEstate
             return check = true;
         }
 
+
+
+        private bool ReadInput() {
+            bool id = checkResidentialID();
+
+            return id;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -265,6 +282,9 @@ namespace RealEstate
 
         private void Add_Click(object sender, EventArgs e)
         {
+            if (ReadInput()) {
+                MessageBox.Show("true");
+            }
 
         }
 
