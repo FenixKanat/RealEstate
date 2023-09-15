@@ -40,7 +40,7 @@ namespace RealEstate
                 }
 
 
-        //Checking Residential ID and Rooms
+        //Checking Residential ID and Rooms & Size and rent
 
         private bool checkResidentialID() {
 
@@ -76,8 +76,41 @@ namespace RealEstate
             return check = true; 
         }
 
+        private bool checkResidentialSize() {
+            double number = 1.0;
+            bool check = true;
 
-        //Checking institutional ID and rooms: 
+            if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
+            {
+                residential.getSize = number;
+            }
+            else {
+                MessageBox.Show("Invalid size");
+                check = false;
+            }
+
+            return check = true; 
+        }
+
+        private bool checkResidentialRent()
+        {
+            double number = 1.0;
+            bool check = true;
+
+            if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
+            {
+                residential.getRent = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid rent");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        //Checking institutional ID,rooms, rent and size: 
 
         private bool checkInstitutionalID() {
 
@@ -85,7 +118,7 @@ namespace RealEstate
          int number = 0;
          bool check = true;
 
-            if (int.TryParse(roomsTB.Text, out number) && number >= 0)
+            if (int.TryParse(idTB.Text, out number) && number >= 0)
             {
                 institutional.Id = number;
             }
@@ -113,7 +146,43 @@ namespace RealEstate
             return check = true;
         }
 
-        //Check Commercial ID and roooms 
+        private bool checkInstitutionalSize()
+        {
+            double number = 1.0;
+            bool check = true;
+
+            if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
+            {
+                institutional.getSize = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid size");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        private bool checkInstitutionalRent()
+        {
+            double number = 1.0;
+            bool check = true;
+
+            if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
+            {
+                institutional.getRent = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid rent");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        //Check Commercial ID, roooms, size and rent: 
 
         private bool checkCommercialID()
         {
@@ -122,7 +191,7 @@ namespace RealEstate
             int number = 0;
             bool check = true;
 
-            if (int.TryParse(roomsTB.Text, out number) && number >= 0)
+            if (int.TryParse(idTB.Text, out number) && number >= 0)
             {
                 commercial.Id = number;
             }
@@ -147,6 +216,42 @@ namespace RealEstate
             else
             {
                 MessageBox.Show("Invalid number of rooms");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        private bool checkCommercialSize()
+        {
+            double number = 1.0;
+            bool check = true;
+
+            if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
+            {
+                commercial.getSize = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid size");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        private bool checkCommercialRent()
+        {
+            double number = 1.0;
+            bool check = true;
+
+            if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
+            {
+                commercial.getRent = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid rent");
                 check = false;
             }
 

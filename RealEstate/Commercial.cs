@@ -14,6 +14,8 @@ namespace RealEstate
         private int _id;
         private int rooms;
 
+        private double size;
+        private double rent;
         public int Id
         {
             get { return _id; }
@@ -24,6 +26,16 @@ namespace RealEstate
         {
             get { return rooms; }
             set { rooms = value; }
+        }
+
+        public double getSize {
+            get { return size; }
+            set { size = value; }
+        }
+
+        public double getRent {
+            get { return rent; }
+            set { rent = value; }
         }
 
 
