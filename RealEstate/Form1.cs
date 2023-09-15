@@ -40,6 +40,8 @@ namespace RealEstate
                 }
 
 
+        //Checking Residential ID and Rooms
+
         private bool checkResidentialID() {
 
 
@@ -73,6 +75,84 @@ namespace RealEstate
 
             return check = true; 
         }
+
+
+        //Checking institutional ID and rooms: 
+
+        private bool checkInstitutionalID() {
+
+
+         int number = 0;
+         bool check = true;
+
+            if (int.TryParse(roomsTB.Text, out number) && number >= 0)
+            {
+                institutional.Id = number;
+            }
+            else {
+                MessageBox.Show("Invalid ID");
+                check = false;
+            }
+
+            return check = true; 
+    }
+
+        private bool checkInstitutionalRooms() {
+            int number = 1;
+            bool check = true;
+
+            if (int.TryParse(roomsTB.Text, out number) && number >= 1)
+            {
+                institutional.getRoom = number;
+            }
+            else {
+                MessageBox.Show("Invalid number of rooms");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        //Check Commercial ID and roooms 
+
+        private bool checkCommercialID()
+        {
+
+
+            int number = 0;
+            bool check = true;
+
+            if (int.TryParse(roomsTB.Text, out number) && number >= 0)
+            {
+                commercial.Id = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid ID");
+                check = false;
+            }
+
+            return check = true;
+        }
+
+        private bool checkCommercialRooms()
+        {
+            int number = 1;
+            bool check = true;
+
+            if (int.TryParse(roomsTB.Text, out number) && number >= 1)
+            {
+                commercial.getRoom = number;
+            }
+            else
+            {
+                MessageBox.Show("Invalid number of rooms");
+                check = false;
+            }
+
+            return check = true;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
