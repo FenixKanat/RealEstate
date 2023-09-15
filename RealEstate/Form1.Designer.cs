@@ -169,6 +169,8 @@
             // 
             // rentTB
             // 
+            this.rentTB.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.rentTB.ForeColor = System.Drawing.SystemColors.InfoText;
             this.rentTB.Location = new System.Drawing.Point(188, 173);
             this.rentTB.Name = "rentTB";
             this.rentTB.Size = new System.Drawing.Size(100, 26);
@@ -180,6 +182,7 @@
             this.idTB.Name = "idTB";
             this.idTB.Size = new System.Drawing.Size(100, 26);
             this.idTB.TabIndex = 4;
+            this.idTB.TextChanged += new System.EventHandler(this.idTB_TextChanged);
             // 
             // ID
             // 
@@ -335,7 +338,7 @@
             // Street
             // 
             this.Street.AutoSize = true;
-            this.Street.Location = new System.Drawing.Point(24, 40);
+            this.Street.Location = new System.Drawing.Point(7, 31);
             this.Street.Name = "Street";
             this.Street.Size = new System.Drawing.Size(53, 20);
             this.Street.TabIndex = 6;
@@ -344,7 +347,7 @@
             // City
             // 
             this.City.AutoSize = true;
-            this.City.Location = new System.Drawing.Point(24, 76);
+            this.City.Location = new System.Drawing.Point(7, 73);
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(35, 20);
             this.City.TabIndex = 7;
@@ -353,7 +356,7 @@
             // Zipcode
             // 
             this.Zipcode.AutoSize = true;
-            this.Zipcode.Location = new System.Drawing.Point(24, 118);
+            this.Zipcode.Location = new System.Drawing.Point(6, 121);
             this.Zipcode.Name = "Zipcode";
             this.Zipcode.Size = new System.Drawing.Size(69, 20);
             this.Zipcode.TabIndex = 8;
@@ -362,6 +365,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(136, 164);
             this.comboBox1.Name = "comboBox1";
@@ -371,7 +375,7 @@
             // Country
             // 
             this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(26, 164);
+            this.Country.Location = new System.Drawing.Point(7, 164);
             this.Country.Name = "Country";
             this.Country.Size = new System.Drawing.Size(64, 20);
             this.Country.TabIndex = 10;
@@ -379,7 +383,7 @@
             // 
             // streetTB
             // 
-            this.streetTB.Location = new System.Drawing.Point(136, 25);
+            this.streetTB.Location = new System.Drawing.Point(136, 31);
             this.streetTB.Name = "streetTB";
             this.streetTB.Size = new System.Drawing.Size(141, 26);
             this.streetTB.TabIndex = 11;
@@ -393,7 +397,7 @@
             // 
             // zipTB
             // 
-            this.zipTB.Location = new System.Drawing.Point(136, 118);
+            this.zipTB.Location = new System.Drawing.Point(136, 121);
             this.zipTB.Name = "zipTB";
             this.zipTB.Size = new System.Drawing.Size(141, 26);
             this.zipTB.TabIndex = 13;

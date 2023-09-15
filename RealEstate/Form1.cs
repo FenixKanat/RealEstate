@@ -15,7 +15,25 @@ namespace RealEstate
         public Form1()
         {
             InitializeComponent();
+            initializeGUI();
         }
+
+        private void initializeGUI() {
+            this.Text += " by Fenix Kanat";
+            listBox1.Text = String.Empty;
+
+            //Textboxes for details
+            idTB.Text = String.Empty;
+            roomsTB.Text = String.Empty;
+            sizeTb.Text = String.Empty;
+            rentTB.Text = String.Empty;
+
+            //Textboxes for address
+            streetTB.Text = String.Empty;
+            cityTB.Text = String.Empty;
+            zipTB.Text = String.Empty;
+
+                }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -58,6 +76,11 @@ namespace RealEstate
         }
 
         private void Zipcode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idTB_TextChanged(object sender, EventArgs e)
         {
 
         }
