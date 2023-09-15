@@ -12,6 +12,10 @@ namespace RealEstate
 {
     public partial class Form1 : Form
     {
+        Residential residential;
+        Institutional institutional;
+        Commercial commercial;
+
         public Form1()
         {
             InitializeComponent();
@@ -35,6 +39,40 @@ namespace RealEstate
 
                 }
 
+
+        private bool checkResidentialID() {
+
+
+            int number = 0;
+            bool check = true;
+
+            if (int.TryParse(idTB.Text, out number) && number >= 0)
+            {
+                residential.Id = number;
+            }
+            else {
+                MessageBox.Show("invalid ID");
+                check = false;
+            }
+
+            return check=true;
+        }
+
+        private bool checkResidentialRooms() {
+            int number = 1;
+            bool check = true;
+
+            if (int.TryParse(roomsTB.Text, out number) && number >= 1)
+            {
+                residential.getRoom = number;
+            }
+            else {
+                MessageBox.Show("invalid number of room");
+                check = false;
+            }
+
+            return check = true; 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
