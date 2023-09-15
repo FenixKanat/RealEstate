@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Add = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.Change = new System.Windows.Forms.Button();
-            this.commercial = new System.Windows.Forms.GroupBox();
-            this.residential = new System.Windows.Forms.GroupBox();
-            this.institutional = new System.Windows.Forms.GroupBox();
-            this.Details = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.ChangeBtn = new System.Windows.Forms.Button();
+            this.commercialGB = new System.Windows.Forms.GroupBox();
+            this.residentialGB = new System.Windows.Forms.GroupBox();
+            this.institutionalGB = new System.Windows.Forms.GroupBox();
+            this.DetailsGB = new System.Windows.Forms.GroupBox();
+            this.roomsTB = new System.Windows.Forms.TextBox();
+            this.sizeTb = new System.Windows.Forms.TextBox();
+            this.rentTB = new System.Windows.Forms.TextBox();
+            this.idTB = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.Label();
             this.RoomsTxt = new System.Windows.Forms.Label();
             this.SizeTxt = new System.Windows.Forms.Label();
@@ -52,124 +52,134 @@
             this.UniversityRB = new System.Windows.Forms.RadioButton();
             this.StoreRB = new System.Windows.Forms.RadioButton();
             this.WareHouseRB = new System.Windows.Forms.RadioButton();
-            this.commercial.SuspendLayout();
-            this.residential.SuspendLayout();
-            this.institutional.SuspendLayout();
-            this.Details.SuspendLayout();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Street = new System.Windows.Forms.Label();
+            this.City = new System.Windows.Forms.Label();
+            this.Zipcode = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Country = new System.Windows.Forms.Label();
+            this.streetTB = new System.Windows.Forms.TextBox();
+            this.cityTB = new System.Windows.Forms.TextBox();
+            this.zipTB = new System.Windows.Forms.TextBox();
+            this.commercialGB.SuspendLayout();
+            this.residentialGB.SuspendLayout();
+            this.institutionalGB.SuspendLayout();
+            this.DetailsGB.SuspendLayout();
+            this.AddressGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Add
+            // AddBtn
             // 
-            this.Add.Location = new System.Drawing.Point(626, 447);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(91, 44);
-            this.Add.TabIndex = 0;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            this.AddBtn.Location = new System.Drawing.Point(607, 516);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(91, 44);
+            this.AddBtn.TabIndex = 0;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.Add_Click);
             // 
-            // Delete
+            // DeleteBtn
             // 
-            this.Delete.Location = new System.Drawing.Point(723, 447);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(86, 44);
-            this.Delete.TabIndex = 1;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.DeleteBtn.Location = new System.Drawing.Point(718, 516);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(86, 44);
+            this.DeleteBtn.TabIndex = 1;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // Change
+            // ChangeBtn
             // 
-            this.Change.Location = new System.Drawing.Point(815, 447);
-            this.Change.Name = "Change";
-            this.Change.Size = new System.Drawing.Size(86, 44);
-            this.Change.TabIndex = 2;
-            this.Change.Text = "Change";
-            this.Change.UseVisualStyleBackColor = true;
-            this.Change.Click += new System.EventHandler(this.Change_Click);
+            this.ChangeBtn.Location = new System.Drawing.Point(823, 516);
+            this.ChangeBtn.Name = "ChangeBtn";
+            this.ChangeBtn.Size = new System.Drawing.Size(86, 44);
+            this.ChangeBtn.TabIndex = 2;
+            this.ChangeBtn.Text = "Change";
+            this.ChangeBtn.UseVisualStyleBackColor = true;
+            this.ChangeBtn.Click += new System.EventHandler(this.Change_Click);
             // 
-            // commercial
+            // commercialGB
             // 
-            this.commercial.Controls.Add(this.WareHouseRB);
-            this.commercial.Controls.Add(this.StoreRB);
-            this.commercial.Location = new System.Drawing.Point(318, 375);
-            this.commercial.Name = "commercial";
-            this.commercial.Size = new System.Drawing.Size(246, 116);
-            this.commercial.TabIndex = 3;
-            this.commercial.TabStop = false;
-            this.commercial.Text = "commercial";
-            this.commercial.Enter += new System.EventHandler(this.commercial_Enter);
+            this.commercialGB.Controls.Add(this.WareHouseRB);
+            this.commercialGB.Controls.Add(this.StoreRB);
+            this.commercialGB.Location = new System.Drawing.Point(318, 375);
+            this.commercialGB.Name = "commercialGB";
+            this.commercialGB.Size = new System.Drawing.Size(246, 116);
+            this.commercialGB.TabIndex = 3;
+            this.commercialGB.TabStop = false;
+            this.commercialGB.Text = "commercial";
+            this.commercialGB.Enter += new System.EventHandler(this.commercial_Enter);
             // 
-            // residential
+            // residentialGB
             // 
-            this.residential.Controls.Add(this.TownHouseRB);
-            this.residential.Controls.Add(this.ApartmentRB);
-            this.residential.Controls.Add(this.VillaRB);
-            this.residential.Location = new System.Drawing.Point(318, 44);
-            this.residential.Name = "residential";
-            this.residential.Size = new System.Drawing.Size(246, 148);
-            this.residential.TabIndex = 4;
-            this.residential.TabStop = false;
-            this.residential.Text = "residential";
-            this.residential.Enter += new System.EventHandler(this.residential_Enter);
+            this.residentialGB.Controls.Add(this.TownHouseRB);
+            this.residentialGB.Controls.Add(this.ApartmentRB);
+            this.residentialGB.Controls.Add(this.VillaRB);
+            this.residentialGB.Location = new System.Drawing.Point(318, 44);
+            this.residentialGB.Name = "residentialGB";
+            this.residentialGB.Size = new System.Drawing.Size(246, 148);
+            this.residentialGB.TabIndex = 4;
+            this.residentialGB.TabStop = false;
+            this.residentialGB.Text = "residential";
+            this.residentialGB.Enter += new System.EventHandler(this.residential_Enter);
             // 
-            // institutional
+            // institutionalGB
             // 
-            this.institutional.Controls.Add(this.UniversityRB);
-            this.institutional.Controls.Add(this.SchoolRB);
-            this.institutional.Controls.Add(this.HospitalRB);
-            this.institutional.Location = new System.Drawing.Point(318, 198);
-            this.institutional.Name = "institutional";
-            this.institutional.Size = new System.Drawing.Size(246, 171);
-            this.institutional.TabIndex = 5;
-            this.institutional.TabStop = false;
-            this.institutional.Text = "institutional";
-            this.institutional.Enter += new System.EventHandler(this.institutional_Enter);
+            this.institutionalGB.Controls.Add(this.UniversityRB);
+            this.institutionalGB.Controls.Add(this.SchoolRB);
+            this.institutionalGB.Controls.Add(this.HospitalRB);
+            this.institutionalGB.Location = new System.Drawing.Point(318, 198);
+            this.institutionalGB.Name = "institutionalGB";
+            this.institutionalGB.Size = new System.Drawing.Size(246, 171);
+            this.institutionalGB.TabIndex = 5;
+            this.institutionalGB.TabStop = false;
+            this.institutionalGB.Text = "institutional";
+            this.institutionalGB.Enter += new System.EventHandler(this.institutional_Enter);
             // 
-            // Details
+            // DetailsGB
             // 
-            this.Details.Controls.Add(this.RentTxt);
-            this.Details.Controls.Add(this.SizeTxt);
-            this.Details.Controls.Add(this.RoomsTxt);
-            this.Details.Controls.Add(this.ID);
-            this.Details.Controls.Add(this.textBox5);
-            this.Details.Controls.Add(this.textBox4);
-            this.Details.Controls.Add(this.textBox3);
-            this.Details.Controls.Add(this.textBox2);
-            this.Details.Location = new System.Drawing.Point(12, 44);
-            this.Details.Name = "Details";
-            this.Details.Size = new System.Drawing.Size(300, 223);
-            this.Details.TabIndex = 6;
-            this.Details.TabStop = false;
-            this.Details.Text = "Details";
+            this.DetailsGB.Controls.Add(this.RentTxt);
+            this.DetailsGB.Controls.Add(this.SizeTxt);
+            this.DetailsGB.Controls.Add(this.RoomsTxt);
+            this.DetailsGB.Controls.Add(this.ID);
+            this.DetailsGB.Controls.Add(this.idTB);
+            this.DetailsGB.Controls.Add(this.rentTB);
+            this.DetailsGB.Controls.Add(this.sizeTb);
+            this.DetailsGB.Controls.Add(this.roomsTB);
+            this.DetailsGB.Location = new System.Drawing.Point(12, 44);
+            this.DetailsGB.Name = "DetailsGB";
+            this.DetailsGB.Size = new System.Drawing.Size(300, 223);
+            this.DetailsGB.TabIndex = 6;
+            this.DetailsGB.TabStop = false;
+            this.DetailsGB.Text = "Details";
             // 
-            // textBox2
+            // roomsTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 1;
+            this.roomsTB.Location = new System.Drawing.Point(188, 74);
+            this.roomsTB.Name = "roomsTB";
+            this.roomsTB.Size = new System.Drawing.Size(100, 26);
+            this.roomsTB.TabIndex = 1;
             // 
-            // textBox3
+            // sizeTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(188, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 2;
+            this.sizeTb.Location = new System.Drawing.Point(188, 122);
+            this.sizeTb.Name = "sizeTb";
+            this.sizeTb.Size = new System.Drawing.Size(100, 26);
+            this.sizeTb.TabIndex = 2;
             // 
-            // textBox4
+            // rentTB
             // 
-            this.textBox4.Location = new System.Drawing.Point(188, 173);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 26);
-            this.textBox4.TabIndex = 3;
+            this.rentTB.Location = new System.Drawing.Point(188, 173);
+            this.rentTB.Name = "rentTB";
+            this.rentTB.Size = new System.Drawing.Size(100, 26);
+            this.rentTB.TabIndex = 3;
             // 
-            // textBox5
+            // idTB
             // 
-            this.textBox5.Location = new System.Drawing.Point(188, 26);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 26);
-            this.textBox5.TabIndex = 4;
+            this.idTB.Location = new System.Drawing.Point(188, 26);
+            this.idTB.Name = "idTB";
+            this.idTB.Size = new System.Drawing.Size(100, 26);
+            this.idTB.TabIndex = 4;
             // 
             // ID
             // 
@@ -209,6 +219,14 @@
             // 
             // AddressGB
             // 
+            this.AddressGB.Controls.Add(this.zipTB);
+            this.AddressGB.Controls.Add(this.cityTB);
+            this.AddressGB.Controls.Add(this.streetTB);
+            this.AddressGB.Controls.Add(this.Country);
+            this.AddressGB.Controls.Add(this.comboBox1);
+            this.AddressGB.Controls.Add(this.Zipcode);
+            this.AddressGB.Controls.Add(this.City);
+            this.AddressGB.Controls.Add(this.Street);
             this.AddressGB.Location = new System.Drawing.Point(12, 273);
             this.AddressGB.Name = "AddressGB";
             this.AddressGB.Size = new System.Drawing.Size(300, 218);
@@ -304,51 +322,130 @@
             this.WareHouseRB.Text = "WareHouse";
             this.WareHouseRB.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(607, 47);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(302, 444);
+            this.listBox1.TabIndex = 8;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // Street
+            // 
+            this.Street.AutoSize = true;
+            this.Street.Location = new System.Drawing.Point(24, 40);
+            this.Street.Name = "Street";
+            this.Street.Size = new System.Drawing.Size(53, 20);
+            this.Street.TabIndex = 6;
+            this.Street.Text = "Street";
+            // 
+            // City
+            // 
+            this.City.AutoSize = true;
+            this.City.Location = new System.Drawing.Point(24, 76);
+            this.City.Name = "City";
+            this.City.Size = new System.Drawing.Size(35, 20);
+            this.City.TabIndex = 7;
+            this.City.Text = "City";
+            // 
+            // Zipcode
+            // 
+            this.Zipcode.AutoSize = true;
+            this.Zipcode.Location = new System.Drawing.Point(24, 118);
+            this.Zipcode.Name = "Zipcode";
+            this.Zipcode.Size = new System.Drawing.Size(69, 20);
+            this.Zipcode.TabIndex = 8;
+            this.Zipcode.Text = "ZipCode";
+            this.Zipcode.Click += new System.EventHandler(this.Zipcode_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(136, 164);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(141, 28);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // Country
+            // 
+            this.Country.AutoSize = true;
+            this.Country.Location = new System.Drawing.Point(26, 164);
+            this.Country.Name = "Country";
+            this.Country.Size = new System.Drawing.Size(64, 20);
+            this.Country.TabIndex = 10;
+            this.Country.Text = "Country";
+            // 
+            // streetTB
+            // 
+            this.streetTB.Location = new System.Drawing.Point(136, 25);
+            this.streetTB.Name = "streetTB";
+            this.streetTB.Size = new System.Drawing.Size(141, 26);
+            this.streetTB.TabIndex = 11;
+            // 
+            // cityTB
+            // 
+            this.cityTB.Location = new System.Drawing.Point(136, 73);
+            this.cityTB.Name = "cityTB";
+            this.cityTB.Size = new System.Drawing.Size(141, 26);
+            this.cityTB.TabIndex = 12;
+            // 
+            // zipTB
+            // 
+            this.zipTB.Location = new System.Drawing.Point(136, 118);
+            this.zipTB.Name = "zipTB";
+            this.zipTB.Size = new System.Drawing.Size(141, 26);
+            this.zipTB.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 572);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.AddressGB);
-            this.Controls.Add(this.Details);
-            this.Controls.Add(this.institutional);
-            this.Controls.Add(this.residential);
-            this.Controls.Add(this.commercial);
-            this.Controls.Add(this.Change);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.DetailsGB);
+            this.Controls.Add(this.institutionalGB);
+            this.Controls.Add(this.residentialGB);
+            this.Controls.Add(this.commercialGB);
+            this.Controls.Add(this.ChangeBtn);
+            this.Controls.Add(this.DeleteBtn);
+            this.Controls.Add(this.AddBtn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.commercial.ResumeLayout(false);
-            this.commercial.PerformLayout();
-            this.residential.ResumeLayout(false);
-            this.residential.PerformLayout();
-            this.institutional.ResumeLayout(false);
-            this.institutional.PerformLayout();
-            this.Details.ResumeLayout(false);
-            this.Details.PerformLayout();
+            this.commercialGB.ResumeLayout(false);
+            this.commercialGB.PerformLayout();
+            this.residentialGB.ResumeLayout(false);
+            this.residentialGB.PerformLayout();
+            this.institutionalGB.ResumeLayout(false);
+            this.institutionalGB.PerformLayout();
+            this.DetailsGB.ResumeLayout(false);
+            this.DetailsGB.PerformLayout();
+            this.AddressGB.ResumeLayout(false);
+            this.AddressGB.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button Add;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button Change;
-        private System.Windows.Forms.GroupBox commercial;
-        private System.Windows.Forms.GroupBox residential;
-        private System.Windows.Forms.GroupBox institutional;
-        private System.Windows.Forms.GroupBox Details;
+        private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button ChangeBtn;
+        private System.Windows.Forms.GroupBox commercialGB;
+        private System.Windows.Forms.GroupBox residentialGB;
+        private System.Windows.Forms.GroupBox institutionalGB;
+        private System.Windows.Forms.GroupBox DetailsGB;
         private System.Windows.Forms.Label RentTxt;
         private System.Windows.Forms.Label SizeTxt;
         private System.Windows.Forms.Label RoomsTxt;
         private System.Windows.Forms.Label ID;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox idTB;
+        private System.Windows.Forms.TextBox rentTB;
+        private System.Windows.Forms.TextBox sizeTb;
+        private System.Windows.Forms.TextBox roomsTB;
         private System.Windows.Forms.GroupBox AddressGB;
         private System.Windows.Forms.RadioButton WareHouseRB;
         private System.Windows.Forms.RadioButton StoreRB;
@@ -358,6 +455,15 @@
         private System.Windows.Forms.RadioButton UniversityRB;
         private System.Windows.Forms.RadioButton SchoolRB;
         private System.Windows.Forms.RadioButton HospitalRB;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label Zipcode;
+        private System.Windows.Forms.Label City;
+        private System.Windows.Forms.Label Street;
+        private System.Windows.Forms.Label Country;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox zipTB;
+        private System.Windows.Forms.TextBox cityTB;
+        private System.Windows.Forms.TextBox streetTB;
     }
 }
 
