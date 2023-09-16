@@ -67,7 +67,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check=true;
+            return check;
         }
 
         private bool checkResidentialRooms() {
@@ -83,7 +83,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true; 
+            return check; 
         }
 
         private bool checkResidentialSize() {
@@ -99,7 +99,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true; 
+            return check; 
         }
 
         private bool checkResidentialRent()
@@ -117,7 +117,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         //Checking institutional ID,rooms, rent and size: 
@@ -137,7 +137,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true; 
+            return check; 
     }
 
         private bool checkInstitutionalRooms() {
@@ -153,7 +153,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         private bool checkInstitutionalSize()
@@ -171,7 +171,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         private bool checkInstitutionalRent()
@@ -189,7 +189,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         //Check Commercial ID, roooms, size and rent: 
@@ -211,7 +211,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         private bool checkCommercialRooms()
@@ -229,7 +229,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         private bool checkCommercialSize()
@@ -247,7 +247,7 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
         private bool checkCommercialRent()
@@ -265,15 +265,41 @@ namespace RealEstate
                 check = false;
             }
 
-            return check = true;
+            return check;
         }
 
 
 
-        private bool ReadInput() {
-            bool id = checkResidentialID();
+        private bool ReadInputResidential() {
+            bool isIdValid = checkResidentialID();
+            bool isRoomsValid = checkResidentialRooms();
+            bool isSizeValid = checkResidentialSize();
+            bool isRentValid = checkResidentialRent();
 
-            return id;
+            return isIdValid && isRoomsValid && isSizeValid && isRentValid;
+
+        }
+
+        private bool ReadInputCommercial()
+        {
+            bool isIdValid = checkCommercialID();
+            bool isRoomsValid = checkCommercialRooms();
+            bool isSizeValid = checkCommercialSize();
+            bool isRentValid = checkCommercialRent();
+
+            return isIdValid && isRoomsValid && isSizeValid && isRentValid;
+
+        }
+
+        private bool ReadInputInstitutional()
+        {
+            bool isIdValid = checkInstitutionalID();
+            bool isRoomsValid = checkInstitutionalRooms();
+            bool isSizeValid = checkInstitutionalSize();
+            bool isRentValid = checkInstitutionalRent();
+
+            return isIdValid && isRoomsValid && isSizeValid && isRentValid;
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -282,8 +308,8 @@ namespace RealEstate
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (ReadInput()) {
-                MessageBox.Show("true");
+            if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
+                MessageBox.Show("Done");
             }
 
         }
