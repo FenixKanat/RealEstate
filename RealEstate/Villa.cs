@@ -14,18 +14,5 @@ namespace RealEstate
         public int villeSize { get; set; }
       
 
-
-        public override void DisplayDetails() {
-            Console.WriteLine($"Villa ID: {ID}");
-            Console.WriteLine($"Villa Address: {Address.Street}, {Address.City}, {Address.ZipCode}, {Address.Countries}");
-            Console.WriteLine($"Number of rooms: {numOfRooms}");
-            Console.WriteLine($"Villa size: {villeSize}");
-            Console.WriteLine($"Villa rent: {villaRent}");
-        }
-
-
-
-
-
     }
 }
