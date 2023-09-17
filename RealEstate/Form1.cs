@@ -60,7 +60,7 @@ namespace RealEstate
 
             if (int.TryParse(idTB.Text, out number) && number >= 0)
             {
-                residential.Id = number;
+                residential.ID = number;
             }
             else {
                 MessageBox.Show("invalid ID");
@@ -76,7 +76,7 @@ namespace RealEstate
 
             if (int.TryParse(roomsTB.Text, out number) && number >= 1)
             {
-                residential.getRoom = number;
+                residential.Rooms = number;
             }
             else {
                 MessageBox.Show("invalid number of room");
@@ -92,7 +92,7 @@ namespace RealEstate
 
             if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
             {
-                residential.getSize = number;
+                residential.Size = number;
             }
             else {
                 MessageBox.Show("Invalid size");
@@ -109,7 +109,7 @@ namespace RealEstate
 
             if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
             {
-                residential.getRent = number;
+                residential.Rent = number;
             }
             else
             {
@@ -130,7 +130,7 @@ namespace RealEstate
 
             if (int.TryParse(idTB.Text, out number) && number >= 0)
             {
-                institutional.Id = number;
+                institutional.ID = number;
             }
             else {
                 MessageBox.Show("Invalid ID");
@@ -146,7 +146,7 @@ namespace RealEstate
 
             if (int.TryParse(roomsTB.Text, out number) && number >= 1)
             {
-                institutional.getRoom = number;
+                institutional.Rooms = number;
             }
             else {
                 MessageBox.Show("Invalid number of rooms");
@@ -163,7 +163,7 @@ namespace RealEstate
 
             if (double.TryParse(sizeTb.Text, out number) && number >= 0.0)
             {
-                institutional.getSize = number;
+                institutional.Size = number;
             }
             else
             {
@@ -181,7 +181,7 @@ namespace RealEstate
 
             if (double.TryParse(rentTB.Text, out number) && number >= 0.0)
             {
-                institutional.getRent = number;
+                institutional.Rent = number;
             }
             else
             {
@@ -203,7 +203,7 @@ namespace RealEstate
 
             if (int.TryParse(idTB.Text, out number) && number >= 0)
             {
-                commercial.Id = number;
+                commercial.ID = number;
             }
             else
             {
@@ -221,7 +221,7 @@ namespace RealEstate
 
             if (int.TryParse(roomsTB.Text, out number) && number >= 1)
             {
-                commercial.getRoom = number;
+                commercial.Rooms = number;
             }
             else
             {
@@ -239,7 +239,7 @@ namespace RealEstate
 
             if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
             {
-                commercial.getSize = number;
+                commercial.Size = number;
             }
             else
             {
@@ -257,7 +257,7 @@ namespace RealEstate
 
             if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
             {
-                commercial.getRent = number;
+                commercial.Rent = number;
             }
             else
             {
@@ -323,6 +323,38 @@ namespace RealEstate
                 ListViewItem residentialType = VillaRB.Checked ? new ListViewItem(VillaRB.Text) : null;
                 ListViewItem residentialType2 = ApartmentRB.Checked ? new ListViewItem(ApartmentRB.Text) : null;
                 ListViewItem residentialType3 = TownHouseRB.Checked ? new ListViewItem(TownHouseRB.Text) : null;
+
+                ListViewItem institutionalType = HospitalRB.Checked ? new ListViewItem(HospitalRB.Text) : null;
+                ListViewItem institutionalType2 = SchoolRB.Checked ? new ListViewItem(SchoolRB.Text) : null;
+                ListViewItem institutionalType3 = UniversityRB.Checked ? new ListViewItem(UniversityRB.Text) : null;
+
+                ListViewItem commercialType = StoreRB.Checked ? new ListViewItem(StoreRB.Text) : null;
+                ListViewItem commercialType2 = WareHouseRB.Checked ? new ListViewItem(WareHouseRB.Text) : null;
+
+
+                if (institutionalType != null) {
+                    listView1.Items.Add(institutionalType);
+
+                }
+
+                if (institutionalType2 != null) {
+                    listView1.Items.Add(institutionalType2);
+
+                }
+
+                if (institutionalType3 != null) {
+                    listView1.Items.Add(institutionalType3);
+
+                }
+
+                if (commercialType != null) {
+                    listView1.Items.Add(commercialType);
+                }
+
+                if (commercialType2 != null)
+                {
+                    listView1.Items.Add(commercialType2);
+                }
 
 
 

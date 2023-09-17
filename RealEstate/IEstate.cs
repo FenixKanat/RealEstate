@@ -9,7 +9,13 @@ namespace RealEstate
 {
     internal interface IEstate
     {
-        string ID { get; set; }
+        int ID { get; set; }
         Address Address { get; set; }
+
+        double Size { get; set; }
+
+        int Rooms { get; set; }
+
+        double Rent { get; set; }
     }
 }
