@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+
+    public enum StoreType
+    {
+        Grocery,
+        Electronics,
+        Clothing,
+        Bookstore
+    }
     internal class Store:Commercial
     {
-       
-        public int storeRent { get; set; }
 
-        public int storeSize { get; set; }
+        public StoreType typeOfStore { get; set; }
+
 
     }
 }

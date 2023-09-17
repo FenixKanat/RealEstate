@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+
+    public enum UniversityType { 
+        Private,
+        Communal
+    }
     internal class University:Institutional
     {
-
-        public int numOfClasses { get; set; }
-        public int sizeOfUni { get; set; }
-
-        public int rentOfUni { get; set; }
-
+   
+        public UniversityType typeOfUni { get; set; }
        
     }
 }

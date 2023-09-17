@@ -47,7 +47,18 @@ namespace RealEstate
             cityTB.Text = String.Empty;
             zipTB.Text = String.Empty;
 
-                }
+
+            foreach (var type in Enum.GetValues(typeof(UniversityType)))
+            {
+                UniCB.Items.Add(type);
+            }
+
+            foreach (var type in Enum.GetValues(typeof(schoolType)))
+            {
+                SchoolCB.Items.Add(type);
+            }
+
+        }
 
 
         //Checking Residential ID and Rooms & Size and rent
@@ -325,8 +336,10 @@ namespace RealEstate
                 ListViewItem residentialType3 = TownHouseRB.Checked ? new ListViewItem(TownHouseRB.Text) : null;
 
                 ListViewItem institutionalType = HospitalRB.Checked ? new ListViewItem(HospitalRB.Text) : null;
-                ListViewItem institutionalType2 = SchoolRB.Checked ? new ListViewItem(SchoolRB.Text) : null;
-                ListViewItem institutionalType3 = UniversityRB.Checked ? new ListViewItem(UniversityRB.Text) : null;
+                ListViewItem institutionalType2 = SchoolCB.SelectedIndex != -1 ? new ListViewItem(SchoolCB.SelectedItem.ToString()): null;
+
+                ListViewItem institutionalType3 = UniCB.SelectedIndex != -1 ? new ListViewItem(UniCB.SelectedItem.ToString()) : null;
+
 
                 ListViewItem commercialType = StoreRB.Checked ? new ListViewItem(StoreRB.Text) : null;
                 ListViewItem commercialType2 = WareHouseRB.Checked ? new ListViewItem(WareHouseRB.Text) : null;
@@ -337,14 +350,16 @@ namespace RealEstate
 
                 }
 
-                if (institutionalType2 != null) {
+                if (institutionalType2 != null)
+                {
+                    institutionalType2.SubItems.Add(SchoolCB.SelectedItem.ToString());
                     listView1.Items.Add(institutionalType2);
-
                 }
 
-                if (institutionalType3 != null) {
+                if (institutionalType3 != null)
+                {
+                    institutionalType3.SubItems.Add(UniCB.SelectedItem.ToString());
                     listView1.Items.Add(institutionalType3);
-
                 }
 
                 if (commercialType != null) {

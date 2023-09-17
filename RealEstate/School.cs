@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+
+    public enum schoolType { 
+        Private,
+        Communal
+    }
     internal class School:Institutional
 
     {
+        public schoolType typeOfSchool { get; set; }
 
-        public int numOfClasses { get; set; }
-        public int schoolSize { get; set; }
-            
-        public int schoolRent { get; set; }
-     
+
     }
 }

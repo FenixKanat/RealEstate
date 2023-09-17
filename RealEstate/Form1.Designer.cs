@@ -39,8 +39,6 @@
             this.ApartmentRB = new System.Windows.Forms.RadioButton();
             this.VillaRB = new System.Windows.Forms.RadioButton();
             this.institutionalGB = new System.Windows.Forms.GroupBox();
-            this.UniversityRB = new System.Windows.Forms.RadioButton();
-            this.SchoolRB = new System.Windows.Forms.RadioButton();
             this.HospitalRB = new System.Windows.Forms.RadioButton();
             this.DetailsGB = new System.Windows.Forms.GroupBox();
             this.RentTxt = new System.Windows.Forms.Label();
@@ -65,6 +63,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.SchoolCB = new System.Windows.Forms.ComboBox();
+            this.UniCB = new System.Windows.Forms.ComboBox();
+            this.School = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.commercialGB.SuspendLayout();
             this.residentialGB.SuspendLayout();
             this.institutionalGB.SuspendLayout();
@@ -184,8 +186,10 @@
             // 
             // institutionalGB
             // 
-            this.institutionalGB.Controls.Add(this.UniversityRB);
-            this.institutionalGB.Controls.Add(this.SchoolRB);
+            this.institutionalGB.Controls.Add(this.label6);
+            this.institutionalGB.Controls.Add(this.School);
+            this.institutionalGB.Controls.Add(this.UniCB);
+            this.institutionalGB.Controls.Add(this.SchoolCB);
             this.institutionalGB.Controls.Add(this.HospitalRB);
             this.institutionalGB.Location = new System.Drawing.Point(318, 198);
             this.institutionalGB.Name = "institutionalGB";
@@ -194,28 +198,6 @@
             this.institutionalGB.TabStop = false;
             this.institutionalGB.Text = "institutional";
             this.institutionalGB.Enter += new System.EventHandler(this.institutional_Enter);
-            // 
-            // UniversityRB
-            // 
-            this.UniversityRB.AutoSize = true;
-            this.UniversityRB.Location = new System.Drawing.Point(6, 127);
-            this.UniversityRB.Name = "UniversityRB";
-            this.UniversityRB.Size = new System.Drawing.Size(102, 24);
-            this.UniversityRB.TabIndex = 6;
-            this.UniversityRB.TabStop = true;
-            this.UniversityRB.Text = "University";
-            this.UniversityRB.UseVisualStyleBackColor = true;
-            // 
-            // SchoolRB
-            // 
-            this.SchoolRB.AutoSize = true;
-            this.SchoolRB.Location = new System.Drawing.Point(6, 75);
-            this.SchoolRB.Name = "SchoolRB";
-            this.SchoolRB.Size = new System.Drawing.Size(83, 24);
-            this.SchoolRB.TabIndex = 5;
-            this.SchoolRB.TabStop = true;
-            this.SchoolRB.Text = "School";
-            this.SchoolRB.UseVisualStyleBackColor = true;
             // 
             // HospitalRB
             // 
@@ -443,6 +425,42 @@
             this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // SchoolCB
+            // 
+            this.SchoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SchoolCB.FormattingEnabled = true;
+            this.SchoolCB.Location = new System.Drawing.Point(119, 59);
+            this.SchoolCB.Name = "SchoolCB";
+            this.SchoolCB.Size = new System.Drawing.Size(121, 28);
+            this.SchoolCB.TabIndex = 5;
+            // 
+            // UniCB
+            // 
+            this.UniCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.UniCB.FormattingEnabled = true;
+            this.UniCB.Location = new System.Drawing.Point(119, 106);
+            this.UniCB.Name = "UniCB";
+            this.UniCB.Size = new System.Drawing.Size(121, 28);
+            this.UniCB.TabIndex = 6;
+            // 
+            // School
+            // 
+            this.School.AutoSize = true;
+            this.School.Location = new System.Drawing.Point(6, 67);
+            this.School.Name = "School";
+            this.School.Size = new System.Drawing.Size(58, 20);
+            this.School.TabIndex = 7;
+            this.School.Text = "School";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "University";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -502,8 +520,6 @@
         private System.Windows.Forms.RadioButton TownHouseRB;
         private System.Windows.Forms.RadioButton ApartmentRB;
         private System.Windows.Forms.RadioButton VillaRB;
-        private System.Windows.Forms.RadioButton UniversityRB;
-        private System.Windows.Forms.RadioButton SchoolRB;
         private System.Windows.Forms.RadioButton HospitalRB;
         private System.Windows.Forms.Label Zipcode;
         private System.Windows.Forms.Label City;
@@ -518,6 +534,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ComboBox UniCB;
+        private System.Windows.Forms.ComboBox SchoolCB;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label School;
     }
 }
 
