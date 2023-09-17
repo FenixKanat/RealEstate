@@ -335,14 +335,21 @@ namespace RealEstate
         {
             if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
 
-                ListViewItem residentialType = VillaRB.Checked ? new ListViewItem(VillaRB.Text) : null;
-                ListViewItem residentialType2 = ApartmentRB.Checked ? new ListViewItem(ApartmentRB.Text) : null;
-                ListViewItem residentialType3 = TownHouseRB.Checked ? new ListViewItem(TownHouseRB.Text) : null;             
 
-                ListViewItem commercialType = StoreRB.Checked ? new ListViewItem(StoreRB.Text) : null;
-                ListViewItem commercialType2 = WareHouseRB.Checked ? new ListViewItem(WareHouseRB.Text) : null;
+                if (VillaRB.Checked && VillaCB.SelectedIndex != -1) {
+                    string combinedValue = $"{VillaRB.Text} : {VillaCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
+                }
 
+                if (ApartmentRB.Checked && ApartmentCB.SelectedIndex != -1) {
+                    string combinedValue = $"{ApartmentRB.Text}:{ApartmentCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
+                }
 
+                if (TownHouseRB.Checked && TownhouseCB.SelectedIndex != -1) {
+                    string combinedValue = $"{TownHouseRB.Text}:{TownhouseCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
+                }
                 if (SchoolRB.Checked && SchoolCB.SelectedIndex != -1)
                 {
                     string combinedValue = $"{SchoolRB.Text} : {SchoolCB.SelectedItem}";
@@ -360,40 +367,21 @@ namespace RealEstate
                     listView1.Items.Add(new ListViewItem(combinedValue));
                 }
 
-                if (commercialType != null) {
-                    listView1.Items.Add(commercialType);
+                if (StoreRB.Checked && StoreCB.SelectedIndex != -1) {
+                    string combinedValue = $"{StoreRB.Text}:{StoreCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
                 }
 
-                if (commercialType2 != null)
-                {
-                    listView1.Items.Add(commercialType2);
+                if (WareHouseRB.Checked && WarehouseCB.SelectedIndex != -1) {
+                    string combinedValue = $"{WareHouseRB.Text}:{WarehouseCB.SelectedItem}";
+
                 }
-
-
-
-                if (residentialType != null)
-                {
-                    listView1.Items.Add(residentialType);
-                }
-
-                if (residentialType2 != null)
-                {
-                    listView1.Items.Add(residentialType2);
-                }
-
-                if (residentialType3 != null) 
-                {
-                    listView1.Items.Add(residentialType3);
-                        }
 
                 ListViewItem item = new ListViewItem(idTB.Text);
                 ListViewItem item2 = new ListViewItem(roomsTB.Text);
                 ListViewItem item3 = new ListViewItem(sizeTb.Text);
                 ListViewItem item4 = new ListViewItem(rentTB.Text);
                 
-
-
-
                 listView1.Items.Add(item);
                 listView1.Items.Add(item2);
                 listView1.Items.Add(item3);
