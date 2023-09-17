@@ -32,35 +32,35 @@
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ChangeBtn = new System.Windows.Forms.Button();
             this.commercialGB = new System.Windows.Forms.GroupBox();
-            this.residentialGB = new System.Windows.Forms.GroupBox();
-            this.institutionalGB = new System.Windows.Forms.GroupBox();
-            this.DetailsGB = new System.Windows.Forms.GroupBox();
-            this.roomsTB = new System.Windows.Forms.TextBox();
-            this.sizeTb = new System.Windows.Forms.TextBox();
-            this.rentTB = new System.Windows.Forms.TextBox();
-            this.idTB = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.Label();
-            this.RoomsTxt = new System.Windows.Forms.Label();
-            this.SizeTxt = new System.Windows.Forms.Label();
-            this.RentTxt = new System.Windows.Forms.Label();
-            this.AddressGB = new System.Windows.Forms.GroupBox();
-            this.VillaRB = new System.Windows.Forms.RadioButton();
-            this.ApartmentRB = new System.Windows.Forms.RadioButton();
-            this.TownHouseRB = new System.Windows.Forms.RadioButton();
-            this.HospitalRB = new System.Windows.Forms.RadioButton();
-            this.SchoolRB = new System.Windows.Forms.RadioButton();
-            this.UniversityRB = new System.Windows.Forms.RadioButton();
-            this.StoreRB = new System.Windows.Forms.RadioButton();
             this.WareHouseRB = new System.Windows.Forms.RadioButton();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.Street = new System.Windows.Forms.Label();
-            this.City = new System.Windows.Forms.Label();
-            this.Zipcode = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Country = new System.Windows.Forms.Label();
-            this.streetTB = new System.Windows.Forms.TextBox();
-            this.cityTB = new System.Windows.Forms.TextBox();
+            this.StoreRB = new System.Windows.Forms.RadioButton();
+            this.residentialGB = new System.Windows.Forms.GroupBox();
+            this.TownHouseRB = new System.Windows.Forms.RadioButton();
+            this.ApartmentRB = new System.Windows.Forms.RadioButton();
+            this.VillaRB = new System.Windows.Forms.RadioButton();
+            this.institutionalGB = new System.Windows.Forms.GroupBox();
+            this.UniversityRB = new System.Windows.Forms.RadioButton();
+            this.SchoolRB = new System.Windows.Forms.RadioButton();
+            this.HospitalRB = new System.Windows.Forms.RadioButton();
+            this.DetailsGB = new System.Windows.Forms.GroupBox();
+            this.RentTxt = new System.Windows.Forms.Label();
+            this.SizeTxt = new System.Windows.Forms.Label();
+            this.RoomsTxt = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.Label();
+            this.idTB = new System.Windows.Forms.TextBox();
+            this.rentTB = new System.Windows.Forms.TextBox();
+            this.sizeTb = new System.Windows.Forms.TextBox();
+            this.roomsTB = new System.Windows.Forms.TextBox();
+            this.AddressGB = new System.Windows.Forms.GroupBox();
             this.zipTB = new System.Windows.Forms.TextBox();
+            this.cityTB = new System.Windows.Forms.TextBox();
+            this.streetTB = new System.Windows.Forms.TextBox();
+            this.Country = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Zipcode = new System.Windows.Forms.Label();
+            this.City = new System.Windows.Forms.Label();
+            this.Street = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.commercialGB.SuspendLayout();
             this.residentialGB.SuspendLayout();
             this.institutionalGB.SuspendLayout();
@@ -110,6 +110,28 @@
             this.commercialGB.Text = "commercial";
             this.commercialGB.Enter += new System.EventHandler(this.commercial_Enter);
             // 
+            // WareHouseRB
+            // 
+            this.WareHouseRB.AutoSize = true;
+            this.WareHouseRB.Location = new System.Drawing.Point(6, 82);
+            this.WareHouseRB.Name = "WareHouseRB";
+            this.WareHouseRB.Size = new System.Drawing.Size(119, 24);
+            this.WareHouseRB.TabIndex = 5;
+            this.WareHouseRB.TabStop = true;
+            this.WareHouseRB.Text = "WareHouse";
+            this.WareHouseRB.UseVisualStyleBackColor = true;
+            // 
+            // StoreRB
+            // 
+            this.StoreRB.AutoSize = true;
+            this.StoreRB.Location = new System.Drawing.Point(6, 42);
+            this.StoreRB.Name = "StoreRB";
+            this.StoreRB.Size = new System.Drawing.Size(73, 24);
+            this.StoreRB.TabIndex = 4;
+            this.StoreRB.TabStop = true;
+            this.StoreRB.Text = "Store";
+            this.StoreRB.UseVisualStyleBackColor = true;
+            // 
             // residentialGB
             // 
             this.residentialGB.Controls.Add(this.TownHouseRB);
@@ -123,6 +145,39 @@
             this.residentialGB.Text = "residential";
             this.residentialGB.Enter += new System.EventHandler(this.residential_Enter);
             // 
+            // TownHouseRB
+            // 
+            this.TownHouseRB.AutoSize = true;
+            this.TownHouseRB.Location = new System.Drawing.Point(6, 118);
+            this.TownHouseRB.Name = "TownHouseRB";
+            this.TownHouseRB.Size = new System.Drawing.Size(119, 24);
+            this.TownHouseRB.TabIndex = 5;
+            this.TownHouseRB.TabStop = true;
+            this.TownHouseRB.Text = "TownHouse";
+            this.TownHouseRB.UseVisualStyleBackColor = true;
+            // 
+            // ApartmentRB
+            // 
+            this.ApartmentRB.AutoSize = true;
+            this.ApartmentRB.Location = new System.Drawing.Point(6, 73);
+            this.ApartmentRB.Name = "ApartmentRB";
+            this.ApartmentRB.Size = new System.Drawing.Size(109, 24);
+            this.ApartmentRB.TabIndex = 4;
+            this.ApartmentRB.TabStop = true;
+            this.ApartmentRB.Text = "Apartment";
+            this.ApartmentRB.UseVisualStyleBackColor = true;
+            // 
+            // VillaRB
+            // 
+            this.VillaRB.AutoSize = true;
+            this.VillaRB.Location = new System.Drawing.Point(6, 31);
+            this.VillaRB.Name = "VillaRB";
+            this.VillaRB.Size = new System.Drawing.Size(63, 24);
+            this.VillaRB.TabIndex = 3;
+            this.VillaRB.TabStop = true;
+            this.VillaRB.Text = "Villa";
+            this.VillaRB.UseVisualStyleBackColor = true;
+            // 
             // institutionalGB
             // 
             this.institutionalGB.Controls.Add(this.UniversityRB);
@@ -135,6 +190,39 @@
             this.institutionalGB.TabStop = false;
             this.institutionalGB.Text = "institutional";
             this.institutionalGB.Enter += new System.EventHandler(this.institutional_Enter);
+            // 
+            // UniversityRB
+            // 
+            this.UniversityRB.AutoSize = true;
+            this.UniversityRB.Location = new System.Drawing.Point(6, 127);
+            this.UniversityRB.Name = "UniversityRB";
+            this.UniversityRB.Size = new System.Drawing.Size(102, 24);
+            this.UniversityRB.TabIndex = 6;
+            this.UniversityRB.TabStop = true;
+            this.UniversityRB.Text = "University";
+            this.UniversityRB.UseVisualStyleBackColor = true;
+            // 
+            // SchoolRB
+            // 
+            this.SchoolRB.AutoSize = true;
+            this.SchoolRB.Location = new System.Drawing.Point(6, 75);
+            this.SchoolRB.Name = "SchoolRB";
+            this.SchoolRB.Size = new System.Drawing.Size(83, 24);
+            this.SchoolRB.TabIndex = 5;
+            this.SchoolRB.TabStop = true;
+            this.SchoolRB.Text = "School";
+            this.SchoolRB.UseVisualStyleBackColor = true;
+            // 
+            // HospitalRB
+            // 
+            this.HospitalRB.AutoSize = true;
+            this.HospitalRB.Location = new System.Drawing.Point(6, 25);
+            this.HospitalRB.Name = "HospitalRB";
+            this.HospitalRB.Size = new System.Drawing.Size(92, 24);
+            this.HospitalRB.TabIndex = 4;
+            this.HospitalRB.TabStop = true;
+            this.HospitalRB.Text = "Hospital";
+            this.HospitalRB.UseVisualStyleBackColor = true;
             // 
             // DetailsGB
             // 
@@ -153,54 +241,14 @@
             this.DetailsGB.TabStop = false;
             this.DetailsGB.Text = "Details";
             // 
-            // roomsTB
+            // RentTxt
             // 
-            this.roomsTB.Location = new System.Drawing.Point(188, 74);
-            this.roomsTB.Name = "roomsTB";
-            this.roomsTB.Size = new System.Drawing.Size(100, 26);
-            this.roomsTB.TabIndex = 1;
-            // 
-            // sizeTb
-            // 
-            this.sizeTb.Location = new System.Drawing.Point(188, 122);
-            this.sizeTb.Name = "sizeTb";
-            this.sizeTb.Size = new System.Drawing.Size(100, 26);
-            this.sizeTb.TabIndex = 2;
-            // 
-            // rentTB
-            // 
-            this.rentTB.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.rentTB.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.rentTB.Location = new System.Drawing.Point(188, 173);
-            this.rentTB.Name = "rentTB";
-            this.rentTB.Size = new System.Drawing.Size(100, 26);
-            this.rentTB.TabIndex = 3;
-            // 
-            // idTB
-            // 
-            this.idTB.Location = new System.Drawing.Point(188, 26);
-            this.idTB.Name = "idTB";
-            this.idTB.Size = new System.Drawing.Size(100, 26);
-            this.idTB.TabIndex = 4;
-            this.idTB.TextChanged += new System.EventHandler(this.idTB_TextChanged);
-            // 
-            // ID
-            // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(7, 31);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(26, 20);
-            this.ID.TabIndex = 5;
-            this.ID.Text = "ID";
-            // 
-            // RoomsTxt
-            // 
-            this.RoomsTxt.AutoSize = true;
-            this.RoomsTxt.Location = new System.Drawing.Point(6, 77);
-            this.RoomsTxt.Name = "RoomsTxt";
-            this.RoomsTxt.Size = new System.Drawing.Size(60, 20);
-            this.RoomsTxt.TabIndex = 7;
-            this.RoomsTxt.Text = "Rooms";
+            this.RentTxt.AutoSize = true;
+            this.RentTxt.Location = new System.Drawing.Point(6, 179);
+            this.RentTxt.Name = "RentTxt";
+            this.RentTxt.Size = new System.Drawing.Size(44, 20);
+            this.RentTxt.TabIndex = 9;
+            this.RentTxt.Text = "Rent";
             // 
             // SizeTxt
             // 
@@ -211,14 +259,54 @@
             this.SizeTxt.TabIndex = 8;
             this.SizeTxt.Text = "Size";
             // 
-            // RentTxt
+            // RoomsTxt
             // 
-            this.RentTxt.AutoSize = true;
-            this.RentTxt.Location = new System.Drawing.Point(6, 179);
-            this.RentTxt.Name = "RentTxt";
-            this.RentTxt.Size = new System.Drawing.Size(44, 20);
-            this.RentTxt.TabIndex = 9;
-            this.RentTxt.Text = "Rent";
+            this.RoomsTxt.AutoSize = true;
+            this.RoomsTxt.Location = new System.Drawing.Point(6, 77);
+            this.RoomsTxt.Name = "RoomsTxt";
+            this.RoomsTxt.Size = new System.Drawing.Size(60, 20);
+            this.RoomsTxt.TabIndex = 7;
+            this.RoomsTxt.Text = "Rooms";
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(7, 31);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(26, 20);
+            this.ID.TabIndex = 5;
+            this.ID.Text = "ID";
+            // 
+            // idTB
+            // 
+            this.idTB.Location = new System.Drawing.Point(188, 26);
+            this.idTB.Name = "idTB";
+            this.idTB.Size = new System.Drawing.Size(100, 26);
+            this.idTB.TabIndex = 4;
+            this.idTB.TextChanged += new System.EventHandler(this.idTB_TextChanged);
+            // 
+            // rentTB
+            // 
+            this.rentTB.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.rentTB.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.rentTB.Location = new System.Drawing.Point(188, 173);
+            this.rentTB.Name = "rentTB";
+            this.rentTB.Size = new System.Drawing.Size(100, 26);
+            this.rentTB.TabIndex = 3;
+            // 
+            // sizeTb
+            // 
+            this.sizeTb.Location = new System.Drawing.Point(188, 122);
+            this.sizeTb.Name = "sizeTb";
+            this.sizeTb.Size = new System.Drawing.Size(100, 26);
+            this.sizeTb.TabIndex = 2;
+            // 
+            // roomsTB
+            // 
+            this.roomsTB.Location = new System.Drawing.Point(188, 74);
+            this.roomsTB.Name = "roomsTB";
+            this.roomsTB.Size = new System.Drawing.Size(100, 26);
+            this.roomsTB.TabIndex = 1;
             // 
             // AddressGB
             // 
@@ -237,121 +325,44 @@
             this.AddressGB.TabStop = false;
             this.AddressGB.Text = "Address";
             // 
-            // VillaRB
+            // zipTB
             // 
-            this.VillaRB.AutoSize = true;
-            this.VillaRB.Location = new System.Drawing.Point(6, 31);
-            this.VillaRB.Name = "VillaRB";
-            this.VillaRB.Size = new System.Drawing.Size(63, 24);
-            this.VillaRB.TabIndex = 3;
-            this.VillaRB.TabStop = true;
-            this.VillaRB.Text = "Villa";
-            this.VillaRB.UseVisualStyleBackColor = true;
+            this.zipTB.Location = new System.Drawing.Point(136, 121);
+            this.zipTB.Name = "zipTB";
+            this.zipTB.Size = new System.Drawing.Size(141, 26);
+            this.zipTB.TabIndex = 13;
             // 
-            // ApartmentRB
+            // cityTB
             // 
-            this.ApartmentRB.AutoSize = true;
-            this.ApartmentRB.Location = new System.Drawing.Point(6, 73);
-            this.ApartmentRB.Name = "ApartmentRB";
-            this.ApartmentRB.Size = new System.Drawing.Size(109, 24);
-            this.ApartmentRB.TabIndex = 4;
-            this.ApartmentRB.TabStop = true;
-            this.ApartmentRB.Text = "Apartment";
-            this.ApartmentRB.UseVisualStyleBackColor = true;
+            this.cityTB.Location = new System.Drawing.Point(136, 73);
+            this.cityTB.Name = "cityTB";
+            this.cityTB.Size = new System.Drawing.Size(141, 26);
+            this.cityTB.TabIndex = 12;
             // 
-            // TownHouseRB
+            // streetTB
             // 
-            this.TownHouseRB.AutoSize = true;
-            this.TownHouseRB.Location = new System.Drawing.Point(6, 118);
-            this.TownHouseRB.Name = "TownHouseRB";
-            this.TownHouseRB.Size = new System.Drawing.Size(119, 24);
-            this.TownHouseRB.TabIndex = 5;
-            this.TownHouseRB.TabStop = true;
-            this.TownHouseRB.Text = "TownHouse";
-            this.TownHouseRB.UseVisualStyleBackColor = true;
+            this.streetTB.Location = new System.Drawing.Point(136, 31);
+            this.streetTB.Name = "streetTB";
+            this.streetTB.Size = new System.Drawing.Size(141, 26);
+            this.streetTB.TabIndex = 11;
             // 
-            // HospitalRB
+            // Country
             // 
-            this.HospitalRB.AutoSize = true;
-            this.HospitalRB.Location = new System.Drawing.Point(6, 25);
-            this.HospitalRB.Name = "HospitalRB";
-            this.HospitalRB.Size = new System.Drawing.Size(92, 24);
-            this.HospitalRB.TabIndex = 4;
-            this.HospitalRB.TabStop = true;
-            this.HospitalRB.Text = "Hospital";
-            this.HospitalRB.UseVisualStyleBackColor = true;
+            this.Country.AutoSize = true;
+            this.Country.Location = new System.Drawing.Point(7, 164);
+            this.Country.Name = "Country";
+            this.Country.Size = new System.Drawing.Size(64, 20);
+            this.Country.TabIndex = 10;
+            this.Country.Text = "Country";
             // 
-            // SchoolRB
+            // comboBox1
             // 
-            this.SchoolRB.AutoSize = true;
-            this.SchoolRB.Location = new System.Drawing.Point(6, 75);
-            this.SchoolRB.Name = "SchoolRB";
-            this.SchoolRB.Size = new System.Drawing.Size(83, 24);
-            this.SchoolRB.TabIndex = 5;
-            this.SchoolRB.TabStop = true;
-            this.SchoolRB.Text = "School";
-            this.SchoolRB.UseVisualStyleBackColor = true;
-            // 
-            // UniversityRB
-            // 
-            this.UniversityRB.AutoSize = true;
-            this.UniversityRB.Location = new System.Drawing.Point(6, 127);
-            this.UniversityRB.Name = "UniversityRB";
-            this.UniversityRB.Size = new System.Drawing.Size(102, 24);
-            this.UniversityRB.TabIndex = 6;
-            this.UniversityRB.TabStop = true;
-            this.UniversityRB.Text = "University";
-            this.UniversityRB.UseVisualStyleBackColor = true;
-            // 
-            // StoreRB
-            // 
-            this.StoreRB.AutoSize = true;
-            this.StoreRB.Location = new System.Drawing.Point(6, 42);
-            this.StoreRB.Name = "StoreRB";
-            this.StoreRB.Size = new System.Drawing.Size(73, 24);
-            this.StoreRB.TabIndex = 4;
-            this.StoreRB.TabStop = true;
-            this.StoreRB.Text = "Store";
-            this.StoreRB.UseVisualStyleBackColor = true;
-            // 
-            // WareHouseRB
-            // 
-            this.WareHouseRB.AutoSize = true;
-            this.WareHouseRB.Location = new System.Drawing.Point(6, 82);
-            this.WareHouseRB.Name = "WareHouseRB";
-            this.WareHouseRB.Size = new System.Drawing.Size(119, 24);
-            this.WareHouseRB.TabIndex = 5;
-            this.WareHouseRB.TabStop = true;
-            this.WareHouseRB.Text = "WareHouse";
-            this.WareHouseRB.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(607, 47);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(302, 444);
-            this.listBox1.TabIndex = 8;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // Street
-            // 
-            this.Street.AutoSize = true;
-            this.Street.Location = new System.Drawing.Point(7, 31);
-            this.Street.Name = "Street";
-            this.Street.Size = new System.Drawing.Size(53, 20);
-            this.Street.TabIndex = 6;
-            this.Street.Text = "Street";
-            // 
-            // City
-            // 
-            this.City.AutoSize = true;
-            this.City.Location = new System.Drawing.Point(7, 73);
-            this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(35, 20);
-            this.City.TabIndex = 7;
-            this.City.Text = "City";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(136, 164);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(141, 28);
+            this.comboBox1.TabIndex = 9;
             // 
             // Zipcode
             // 
@@ -363,51 +374,39 @@
             this.Zipcode.Text = "ZipCode";
             this.Zipcode.Click += new System.EventHandler(this.Zipcode_Click);
             // 
-            // comboBox1
+            // City
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(136, 164);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 28);
-            this.comboBox1.TabIndex = 9;
+            this.City.AutoSize = true;
+            this.City.Location = new System.Drawing.Point(7, 73);
+            this.City.Name = "City";
+            this.City.Size = new System.Drawing.Size(35, 20);
+            this.City.TabIndex = 7;
+            this.City.Text = "City";
             // 
-            // Country
+            // Street
             // 
-            this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(7, 164);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(64, 20);
-            this.Country.TabIndex = 10;
-            this.Country.Text = "Country";
+            this.Street.AutoSize = true;
+            this.Street.Location = new System.Drawing.Point(7, 31);
+            this.Street.Name = "Street";
+            this.Street.Size = new System.Drawing.Size(53, 20);
+            this.Street.TabIndex = 6;
+            this.Street.Text = "Street";
             // 
-            // streetTB
+            // listView1
             // 
-            this.streetTB.Location = new System.Drawing.Point(136, 31);
-            this.streetTB.Name = "streetTB";
-            this.streetTB.Size = new System.Drawing.Size(141, 26);
-            this.streetTB.TabIndex = 11;
-            // 
-            // cityTB
-            // 
-            this.cityTB.Location = new System.Drawing.Point(136, 73);
-            this.cityTB.Name = "cityTB";
-            this.cityTB.Size = new System.Drawing.Size(141, 26);
-            this.cityTB.TabIndex = 12;
-            // 
-            // zipTB
-            // 
-            this.zipTB.Location = new System.Drawing.Point(136, 121);
-            this.zipTB.Name = "zipTB";
-            this.zipTB.Size = new System.Drawing.Size(141, 26);
-            this.zipTB.TabIndex = 13;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(607, 44);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(302, 447);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 572);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.AddressGB);
             this.Controls.Add(this.DetailsGB);
             this.Controls.Add(this.institutionalGB);
@@ -459,7 +458,6 @@
         private System.Windows.Forms.RadioButton UniversityRB;
         private System.Windows.Forms.RadioButton SchoolRB;
         private System.Windows.Forms.RadioButton HospitalRB;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label Zipcode;
         private System.Windows.Forms.Label City;
         private System.Windows.Forms.Label Street;
@@ -468,6 +466,7 @@
         private System.Windows.Forms.TextBox zipTB;
         private System.Windows.Forms.TextBox cityTB;
         private System.Windows.Forms.TextBox streetTB;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 

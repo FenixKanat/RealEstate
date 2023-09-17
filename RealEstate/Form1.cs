@@ -34,7 +34,7 @@ namespace RealEstate
 
         private void initializeGUI() {
             this.Text += " by Fenix Kanat";
-            listBox1.Text = String.Empty;
+            listView1.Text = String.Empty;
 
             //Textboxes for details
             idTB.Text = String.Empty;
@@ -301,6 +301,16 @@ namespace RealEstate
             return isIdValid && isRoomsValid && isSizeValid && isRentValid;
 
         }
+
+
+        private void UpdateLBox()
+        {
+            listView1.Items.Clear();
+
+
+
+           
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -310,6 +320,16 @@ namespace RealEstate
         {
             if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
                 MessageBox.Show("Done");
+
+                ListViewItem item = new ListViewItem(idTB.Text);
+                ListViewItem item2 = new ListViewItem(roomsTB.Text);
+                ListViewItem item3 = new ListViewItem(sizeTb.Text);
+                ListViewItem item4 = new ListViewItem(rentTB.Text);
+
+                listView1.Items.Add(item);
+                listView1.Items.Add(item2);
+                listView1.Items.Add(item3);
+                listView1.Items.Add(item4);
             }
 
         }
