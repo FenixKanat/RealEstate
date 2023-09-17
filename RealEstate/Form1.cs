@@ -158,10 +158,10 @@ namespace RealEstate
 
         private bool checkInstitutionalSize()
         {
-            double number = 1.0;
+            double number = 0.0;
             bool check = true;
 
-            if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
+            if (double.TryParse(sizeTb.Text, out number) && number >= 0.0)
             {
                 institutional.getSize = number;
             }
@@ -176,10 +176,10 @@ namespace RealEstate
 
         private bool checkInstitutionalRent()
         {
-            double number = 1.0;
+            double number = 0.0;
             bool check = true;
 
-            if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
+            if (double.TryParse(rentTB.Text, out number) && number >= 0.0)
             {
                 institutional.getRent = number;
             }
@@ -234,7 +234,7 @@ namespace RealEstate
 
         private bool checkCommercialSize()
         {
-            double number = 1.0;
+            double number = 0.0;
             bool check = true;
 
             if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
@@ -252,7 +252,7 @@ namespace RealEstate
 
         private bool checkCommercialRent()
         {
-            double number = 1.0;
+            double number = 0.0;
             bool check = true;
 
             if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
