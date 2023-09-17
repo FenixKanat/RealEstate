@@ -60,6 +60,10 @@
             this.Zipcode = new System.Windows.Forms.Label();
             this.City = new System.Windows.Forms.Label();
             this.Street = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.commercialGB.SuspendLayout();
             this.residentialGB.SuspendLayout();
@@ -392,13 +396,51 @@
             this.Street.TabIndex = 6;
             this.Street.Text = "Street";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(656, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(714, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Rooms";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(794, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Size";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(865, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Rent";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(607, 44);
+            this.listView1.Location = new System.Drawing.Point(570, 44);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(302, 447);
-            this.listView1.TabIndex = 8;
+            this.listView1.Size = new System.Drawing.Size(339, 447);
+            this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
@@ -407,6 +449,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 572);
             this.Controls.Add(this.listView1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AddressGB);
             this.Controls.Add(this.DetailsGB);
             this.Controls.Add(this.institutionalGB);
@@ -429,6 +475,7 @@
             this.AddressGB.ResumeLayout(false);
             this.AddressGB.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -466,6 +513,10 @@
         private System.Windows.Forms.TextBox zipTB;
         private System.Windows.Forms.TextBox cityTB;
         private System.Windows.Forms.TextBox streetTB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView listView1;
     }
 }

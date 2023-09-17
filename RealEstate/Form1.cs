@@ -319,18 +319,31 @@ namespace RealEstate
         private void Add_Click(object sender, EventArgs e)
         {
             if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
-                MessageBox.Show("Done");
+
+                ListViewItem residentialType = VillaRB.Checked ? new ListViewItem(VillaRB.Text) : null;
+
+
+                if (residentialType != null)
+                {
+                    listView1.Items.Add(residentialType);
+                }
 
                 ListViewItem item = new ListViewItem(idTB.Text);
                 ListViewItem item2 = new ListViewItem(roomsTB.Text);
                 ListViewItem item3 = new ListViewItem(sizeTb.Text);
                 ListViewItem item4 = new ListViewItem(rentTB.Text);
+                
+
+
 
                 listView1.Items.Add(item);
                 listView1.Items.Add(item2);
                 listView1.Items.Add(item3);
                 listView1.Items.Add(item4);
+
+          
             }
+
 
         }
 
@@ -370,6 +383,16 @@ namespace RealEstate
         }
 
         private void idTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
