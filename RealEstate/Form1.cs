@@ -321,12 +321,25 @@ namespace RealEstate
             if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
 
                 ListViewItem residentialType = VillaRB.Checked ? new ListViewItem(VillaRB.Text) : null;
+                ListViewItem residentialType2 = ApartmentRB.Checked ? new ListViewItem(ApartmentRB.Text) : null;
+                ListViewItem residentialType3 = TownHouseRB.Checked ? new ListViewItem(TownHouseRB.Text) : null;
+
 
 
                 if (residentialType != null)
                 {
                     listView1.Items.Add(residentialType);
                 }
+
+                if (residentialType2 != null)
+                {
+                    listView1.Items.Add(residentialType2);
+                }
+
+                if (residentialType3 != null) 
+                {
+                    listView1.Items.Add(residentialType3);
+                        }
 
                 ListViewItem item = new ListViewItem(idTB.Text);
                 ListViewItem item2 = new ListViewItem(roomsTB.Text);
