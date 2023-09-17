@@ -58,6 +58,10 @@ namespace RealEstate
                 SchoolCB.Items.Add(type);
             }
 
+            foreach (var type in Enum.GetValues(typeof(hospitalType))) {
+                HospitalCB.Items.Add(type);
+            }
+
         }
 
 
@@ -333,33 +337,27 @@ namespace RealEstate
 
                 ListViewItem residentialType = VillaRB.Checked ? new ListViewItem(VillaRB.Text) : null;
                 ListViewItem residentialType2 = ApartmentRB.Checked ? new ListViewItem(ApartmentRB.Text) : null;
-                ListViewItem residentialType3 = TownHouseRB.Checked ? new ListViewItem(TownHouseRB.Text) : null;
-
-                ListViewItem institutionalType = HospitalRB.Checked ? new ListViewItem(HospitalRB.Text) : null;
-                ListViewItem institutionalType2 = SchoolCB.SelectedIndex != -1 ? new ListViewItem(SchoolCB.SelectedItem.ToString()): null;
-
-                ListViewItem institutionalType3 = UniCB.SelectedIndex != -1 ? new ListViewItem(UniCB.SelectedItem.ToString()) : null;
-
+                ListViewItem residentialType3 = TownHouseRB.Checked ? new ListViewItem(TownHouseRB.Text) : null;             
 
                 ListViewItem commercialType = StoreRB.Checked ? new ListViewItem(StoreRB.Text) : null;
                 ListViewItem commercialType2 = WareHouseRB.Checked ? new ListViewItem(WareHouseRB.Text) : null;
 
 
-                if (institutionalType != null) {
-                    listView1.Items.Add(institutionalType);
-
+                if (SchoolRB.Checked && SchoolCB.SelectedIndex != -1)
+                {
+                    string combinedValue = $"{SchoolRB.Text} : {SchoolCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
                 }
 
-                if (institutionalType2 != null)
+                if (UniRB.Checked && UniCB.SelectedIndex != -1)  
                 {
-                    institutionalType2.SubItems.Add(SchoolCB.SelectedItem.ToString());
-                    listView1.Items.Add(institutionalType2);
+                    string combinedValue = $"{UniRB.Text} : {UniCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
                 }
 
-                if (institutionalType3 != null)
-                {
-                    institutionalType3.SubItems.Add(UniCB.SelectedItem.ToString());
-                    listView1.Items.Add(institutionalType3);
+                if (HospitalRB.Checked && HospitalCB.SelectedIndex != -1) {
+                    string combinedValue = $"{HospitalRB.Text} : {HospitalCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
                 }
 
                 if (commercialType != null) {

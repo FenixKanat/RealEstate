@@ -65,8 +65,9 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.SchoolCB = new System.Windows.Forms.ComboBox();
             this.UniCB = new System.Windows.Forms.ComboBox();
-            this.School = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.SchoolRB = new System.Windows.Forms.RadioButton();
+            this.UniRB = new System.Windows.Forms.RadioButton();
+            this.HospitalCB = new System.Windows.Forms.ComboBox();
             this.commercialGB.SuspendLayout();
             this.residentialGB.SuspendLayout();
             this.institutionalGB.SuspendLayout();
@@ -186,8 +187,9 @@
             // 
             // institutionalGB
             // 
-            this.institutionalGB.Controls.Add(this.label6);
-            this.institutionalGB.Controls.Add(this.School);
+            this.institutionalGB.Controls.Add(this.HospitalCB);
+            this.institutionalGB.Controls.Add(this.UniRB);
+            this.institutionalGB.Controls.Add(this.SchoolRB);
             this.institutionalGB.Controls.Add(this.UniCB);
             this.institutionalGB.Controls.Add(this.SchoolCB);
             this.institutionalGB.Controls.Add(this.HospitalRB);
@@ -429,7 +431,7 @@
             // 
             this.SchoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SchoolCB.FormattingEnabled = true;
-            this.SchoolCB.Location = new System.Drawing.Point(119, 59);
+            this.SchoolCB.Location = new System.Drawing.Point(125, 63);
             this.SchoolCB.Name = "SchoolCB";
             this.SchoolCB.Size = new System.Drawing.Size(121, 28);
             this.SchoolCB.TabIndex = 5;
@@ -438,28 +440,41 @@
             // 
             this.UniCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UniCB.FormattingEnabled = true;
-            this.UniCB.Location = new System.Drawing.Point(119, 106);
+            this.UniCB.Location = new System.Drawing.Point(125, 106);
             this.UniCB.Name = "UniCB";
             this.UniCB.Size = new System.Drawing.Size(121, 28);
             this.UniCB.TabIndex = 6;
             // 
-            // School
+            // SchoolRB
             // 
-            this.School.AutoSize = true;
-            this.School.Location = new System.Drawing.Point(6, 67);
-            this.School.Name = "School";
-            this.School.Size = new System.Drawing.Size(58, 20);
-            this.School.TabIndex = 7;
-            this.School.Text = "School";
+            this.SchoolRB.AutoSize = true;
+            this.SchoolRB.Location = new System.Drawing.Point(6, 67);
+            this.SchoolRB.Name = "SchoolRB";
+            this.SchoolRB.Size = new System.Drawing.Size(83, 24);
+            this.SchoolRB.TabIndex = 7;
+            this.SchoolRB.TabStop = true;
+            this.SchoolRB.Text = "School";
+            this.SchoolRB.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // UniRB
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "University";
+            this.UniRB.AutoSize = true;
+            this.UniRB.Location = new System.Drawing.Point(6, 110);
+            this.UniRB.Name = "UniRB";
+            this.UniRB.Size = new System.Drawing.Size(102, 24);
+            this.UniRB.TabIndex = 8;
+            this.UniRB.TabStop = true;
+            this.UniRB.Text = "University";
+            this.UniRB.UseVisualStyleBackColor = true;
+            // 
+            // HospitalCB
+            // 
+            this.HospitalCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HospitalCB.FormattingEnabled = true;
+            this.HospitalCB.Location = new System.Drawing.Point(125, 21);
+            this.HospitalCB.Name = "HospitalCB";
+            this.HospitalCB.Size = new System.Drawing.Size(121, 28);
+            this.HospitalCB.TabIndex = 9;
             // 
             // Form1
             // 
@@ -536,8 +551,9 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ComboBox UniCB;
         private System.Windows.Forms.ComboBox SchoolCB;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label School;
+        private System.Windows.Forms.RadioButton UniRB;
+        private System.Windows.Forms.RadioButton SchoolRB;
+        private System.Windows.Forms.ComboBox HospitalCB;
     }
 }
 

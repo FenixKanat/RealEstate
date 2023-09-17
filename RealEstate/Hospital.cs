@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+    public enum hospitalType
+    {
+        Private,
+        Communal
+    }
     internal class Hospital:Institutional
     {
-        public int numOfRooms { get; set; }
-        public int sizeOfHosp { get; set; }
-
-        public int rentOfHosp { get; set; }
+        public hospitalType typeOfHospital { get; set; }
        
     }
 }
