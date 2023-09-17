@@ -68,6 +68,11 @@
             this.SchoolRB = new System.Windows.Forms.RadioButton();
             this.UniRB = new System.Windows.Forms.RadioButton();
             this.HospitalCB = new System.Windows.Forms.ComboBox();
+            this.VillaCB = new System.Windows.Forms.ComboBox();
+            this.ApartmentCB = new System.Windows.Forms.ComboBox();
+            this.TownhouseCB = new System.Windows.Forms.ComboBox();
+            this.StoreCB = new System.Windows.Forms.ComboBox();
+            this.WarehouseCB = new System.Windows.Forms.ComboBox();
             this.commercialGB.SuspendLayout();
             this.residentialGB.SuspendLayout();
             this.institutionalGB.SuspendLayout();
@@ -107,6 +112,8 @@
             // 
             // commercialGB
             // 
+            this.commercialGB.Controls.Add(this.WarehouseCB);
+            this.commercialGB.Controls.Add(this.StoreCB);
             this.commercialGB.Controls.Add(this.WareHouseRB);
             this.commercialGB.Controls.Add(this.StoreRB);
             this.commercialGB.Location = new System.Drawing.Point(318, 375);
@@ -141,6 +148,9 @@
             // 
             // residentialGB
             // 
+            this.residentialGB.Controls.Add(this.TownhouseCB);
+            this.residentialGB.Controls.Add(this.ApartmentCB);
+            this.residentialGB.Controls.Add(this.VillaCB);
             this.residentialGB.Controls.Add(this.TownHouseRB);
             this.residentialGB.Controls.Add(this.ApartmentRB);
             this.residentialGB.Controls.Add(this.VillaRB);
@@ -431,18 +441,18 @@
             // 
             this.SchoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SchoolCB.FormattingEnabled = true;
-            this.SchoolCB.Location = new System.Drawing.Point(125, 63);
+            this.SchoolCB.Location = new System.Drawing.Point(131, 63);
             this.SchoolCB.Name = "SchoolCB";
-            this.SchoolCB.Size = new System.Drawing.Size(121, 28);
+            this.SchoolCB.Size = new System.Drawing.Size(115, 28);
             this.SchoolCB.TabIndex = 5;
             // 
             // UniCB
             // 
             this.UniCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UniCB.FormattingEnabled = true;
-            this.UniCB.Location = new System.Drawing.Point(125, 106);
+            this.UniCB.Location = new System.Drawing.Point(131, 106);
             this.UniCB.Name = "UniCB";
-            this.UniCB.Size = new System.Drawing.Size(121, 28);
+            this.UniCB.Size = new System.Drawing.Size(115, 28);
             this.UniCB.TabIndex = 6;
             // 
             // SchoolRB
@@ -471,10 +481,55 @@
             // 
             this.HospitalCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HospitalCB.FormattingEnabled = true;
-            this.HospitalCB.Location = new System.Drawing.Point(125, 21);
+            this.HospitalCB.Location = new System.Drawing.Point(131, 21);
             this.HospitalCB.Name = "HospitalCB";
-            this.HospitalCB.Size = new System.Drawing.Size(121, 28);
+            this.HospitalCB.Size = new System.Drawing.Size(115, 28);
             this.HospitalCB.TabIndex = 9;
+            // 
+            // VillaCB
+            // 
+            this.VillaCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VillaCB.FormattingEnabled = true;
+            this.VillaCB.Location = new System.Drawing.Point(131, 27);
+            this.VillaCB.Name = "VillaCB";
+            this.VillaCB.Size = new System.Drawing.Size(115, 28);
+            this.VillaCB.TabIndex = 10;
+            // 
+            // ApartmentCB
+            // 
+            this.ApartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ApartmentCB.FormattingEnabled = true;
+            this.ApartmentCB.Location = new System.Drawing.Point(131, 69);
+            this.ApartmentCB.Name = "ApartmentCB";
+            this.ApartmentCB.Size = new System.Drawing.Size(115, 28);
+            this.ApartmentCB.TabIndex = 11;
+            // 
+            // TownhouseCB
+            // 
+            this.TownhouseCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TownhouseCB.FormattingEnabled = true;
+            this.TownhouseCB.Location = new System.Drawing.Point(131, 114);
+            this.TownhouseCB.Name = "TownhouseCB";
+            this.TownhouseCB.Size = new System.Drawing.Size(115, 28);
+            this.TownhouseCB.TabIndex = 12;
+            // 
+            // StoreCB
+            // 
+            this.StoreCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StoreCB.FormattingEnabled = true;
+            this.StoreCB.Location = new System.Drawing.Point(131, 38);
+            this.StoreCB.Name = "StoreCB";
+            this.StoreCB.Size = new System.Drawing.Size(115, 28);
+            this.StoreCB.TabIndex = 10;
+            // 
+            // WarehouseCB
+            // 
+            this.WarehouseCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WarehouseCB.FormattingEnabled = true;
+            this.WarehouseCB.Location = new System.Drawing.Point(131, 76);
+            this.WarehouseCB.Name = "WarehouseCB";
+            this.WarehouseCB.Size = new System.Drawing.Size(115, 28);
+            this.WarehouseCB.TabIndex = 11;
             // 
             // Form1
             // 
@@ -554,6 +609,11 @@
         private System.Windows.Forms.RadioButton UniRB;
         private System.Windows.Forms.RadioButton SchoolRB;
         private System.Windows.Forms.ComboBox HospitalCB;
+        private System.Windows.Forms.ComboBox WarehouseCB;
+        private System.Windows.Forms.ComboBox StoreCB;
+        private System.Windows.Forms.ComboBox TownhouseCB;
+        private System.Windows.Forms.ComboBox ApartmentCB;
+        private System.Windows.Forms.ComboBox VillaCB;
     }
 }
 
