@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+    public enum typesOfWareHouse { 
+    Distributioncenter,
+    Retail,
+    Public, 
+    Private
+    }
     internal class Warehouse:Commercial
     {
-
-        public int sizeOfWH { get; set; }
-        public int rentOfWH { get; set; }
+        public typesOfWareHouse WarehouseType { get; set; }
     }
 }

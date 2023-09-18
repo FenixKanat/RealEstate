@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+    public enum typeOfTownHouse { 
+    Traditional,
+    Stacked,
+    Duplex,
+    Triplex}
     internal class Townhouse:Residential
     {
 
-        public int numOfRooms { get; set; }
-        public int sizeOfTH { get; set; }
-
-        public int rentOfTH { get; set; }
-        
+        public typeOfTownHouse townHouseType {
+            get; set;
+        }
     }
 }

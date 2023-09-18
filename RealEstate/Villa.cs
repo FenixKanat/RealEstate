@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+
+    public enum typeOfVilla { 
+        RomanVilla,
+        PoolVilla,
+        LuxuryVilla
+    }
     internal class Villa:Residential
     {
-
-        public int numOfRooms { get; set; }
-        public int villaRent { get; set; }
-        public int villeSize { get; set; }
-      
+        public typeOfVilla VillaType {
+            get; set;
+        }
 
     }
 }

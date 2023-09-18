@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
+
+    public enum typeOfApartment { 
+        StudioApartment,
+        LoftApartment,
+        StudentApartment
+    }
     internal class Apartment:Residential
     {
-
-        public int numOfRooms { get; set; }
-        public int apartmentRent { get; set; }
-
-        public int apartmentSize { get; set; }
-
+        public typeOfApartment ApartmentType {
+            get;set;
+        }
     }
 }

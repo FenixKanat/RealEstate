@@ -62,6 +62,27 @@ namespace RealEstate
                 HospitalCB.Items.Add(type);
             }
 
+            foreach (var type in Enum.GetValues(typeof(typesOfWareHouse))) {
+                WarehouseCB.Items.Add(type);
+            }
+
+            foreach (var type in Enum.GetValues(typeof(StoreType))) {
+                StoreCB.Items.Add(type);
+            }
+
+            foreach (var type in Enum.GetValues(typeof(typeOfVilla))) {
+
+                VillaCB.Items.Add(type);
+            }
+
+            foreach (var type in Enum.GetValues(typeof(typeOfTownHouse))) {
+                TownhouseCB.Items.Add(type);
+            }
+
+            foreach (var type in Enum.GetValues(typeof(typeOfApartment))) {
+                ApartmentCB.Items.Add(type);
+            }
+
         }
 
 
@@ -374,6 +395,7 @@ namespace RealEstate
 
                 if (WareHouseRB.Checked && WarehouseCB.SelectedIndex != -1) {
                     string combinedValue = $"{WareHouseRB.Text}:{WarehouseCB.SelectedItem}";
+                    listView1.Items.Add(new ListViewItem(combinedValue));
 
                 }
 
