@@ -395,7 +395,7 @@ namespace RealEstate
 
                 if (WareHouseRB.Checked && WarehouseCB.SelectedIndex != -1) {
                     string combinedValue = $"{WareHouseRB.Text}:{WarehouseCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    listView1.Items.Add(new ListViewItem(combinedValue)); 
 
                 }
 

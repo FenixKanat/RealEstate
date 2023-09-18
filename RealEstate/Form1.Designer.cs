@@ -31,14 +31,12 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ChangeBtn = new System.Windows.Forms.Button();
-            this.commercialGB = new System.Windows.Forms.GroupBox();
             this.WareHouseRB = new System.Windows.Forms.RadioButton();
             this.StoreRB = new System.Windows.Forms.RadioButton();
             this.residentialGB = new System.Windows.Forms.GroupBox();
             this.TownHouseRB = new System.Windows.Forms.RadioButton();
             this.ApartmentRB = new System.Windows.Forms.RadioButton();
             this.VillaRB = new System.Windows.Forms.RadioButton();
-            this.institutionalGB = new System.Windows.Forms.GroupBox();
             this.HospitalRB = new System.Windows.Forms.RadioButton();
             this.DetailsGB = new System.Windows.Forms.GroupBox();
             this.RentTxt = new System.Windows.Forms.Label();
@@ -73,9 +71,9 @@
             this.TownhouseCB = new System.Windows.Forms.ComboBox();
             this.StoreCB = new System.Windows.Forms.ComboBox();
             this.WarehouseCB = new System.Windows.Forms.ComboBox();
-            this.commercialGB.SuspendLayout();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.residentialGB.SuspendLayout();
-            this.institutionalGB.SuspendLayout();
             this.DetailsGB.SuspendLayout();
             this.AddressGB.SuspendLayout();
             this.SuspendLayout();
@@ -110,24 +108,10 @@
             this.ChangeBtn.UseVisualStyleBackColor = true;
             this.ChangeBtn.Click += new System.EventHandler(this.Change_Click);
             // 
-            // commercialGB
-            // 
-            this.commercialGB.Controls.Add(this.WarehouseCB);
-            this.commercialGB.Controls.Add(this.StoreCB);
-            this.commercialGB.Controls.Add(this.WareHouseRB);
-            this.commercialGB.Controls.Add(this.StoreRB);
-            this.commercialGB.Location = new System.Drawing.Point(318, 375);
-            this.commercialGB.Name = "commercialGB";
-            this.commercialGB.Size = new System.Drawing.Size(246, 116);
-            this.commercialGB.TabIndex = 3;
-            this.commercialGB.TabStop = false;
-            this.commercialGB.Text = "commercial";
-            this.commercialGB.Enter += new System.EventHandler(this.commercial_Enter);
-            // 
             // WareHouseRB
             // 
             this.WareHouseRB.AutoSize = true;
-            this.WareHouseRB.Location = new System.Drawing.Point(6, 82);
+            this.WareHouseRB.Location = new System.Drawing.Point(16, 517);
             this.WareHouseRB.Name = "WareHouseRB";
             this.WareHouseRB.Size = new System.Drawing.Size(119, 24);
             this.WareHouseRB.TabIndex = 5;
@@ -138,7 +122,7 @@
             // StoreRB
             // 
             this.StoreRB.AutoSize = true;
-            this.StoreRB.Location = new System.Drawing.Point(6, 42);
+            this.StoreRB.Location = new System.Drawing.Point(16, 468);
             this.StoreRB.Name = "StoreRB";
             this.StoreRB.Size = new System.Drawing.Size(73, 24);
             this.StoreRB.TabIndex = 4;
@@ -148,15 +132,27 @@
             // 
             // residentialGB
             // 
+            this.residentialGB.Controls.Add(this.label6);
+            this.residentialGB.Controls.Add(this.label5);
+            this.residentialGB.Controls.Add(this.WarehouseCB);
+            this.residentialGB.Controls.Add(this.UniCB);
             this.residentialGB.Controls.Add(this.TownhouseCB);
+            this.residentialGB.Controls.Add(this.WareHouseRB);
+            this.residentialGB.Controls.Add(this.UniRB);
+            this.residentialGB.Controls.Add(this.StoreCB);
             this.residentialGB.Controls.Add(this.ApartmentCB);
+            this.residentialGB.Controls.Add(this.SchoolCB);
+            this.residentialGB.Controls.Add(this.SchoolRB);
+            this.residentialGB.Controls.Add(this.StoreRB);
+            this.residentialGB.Controls.Add(this.HospitalCB);
             this.residentialGB.Controls.Add(this.VillaCB);
             this.residentialGB.Controls.Add(this.TownHouseRB);
             this.residentialGB.Controls.Add(this.ApartmentRB);
             this.residentialGB.Controls.Add(this.VillaRB);
-            this.residentialGB.Location = new System.Drawing.Point(318, 44);
+            this.residentialGB.Controls.Add(this.HospitalRB);
+            this.residentialGB.Location = new System.Drawing.Point(231, -1);
             this.residentialGB.Name = "residentialGB";
-            this.residentialGB.Size = new System.Drawing.Size(246, 148);
+            this.residentialGB.Size = new System.Drawing.Size(298, 561);
             this.residentialGB.TabIndex = 4;
             this.residentialGB.TabStop = false;
             this.residentialGB.Text = "residential";
@@ -165,7 +161,7 @@
             // TownHouseRB
             // 
             this.TownHouseRB.AutoSize = true;
-            this.TownHouseRB.Location = new System.Drawing.Point(6, 118);
+            this.TownHouseRB.Location = new System.Drawing.Point(16, 135);
             this.TownHouseRB.Name = "TownHouseRB";
             this.TownHouseRB.Size = new System.Drawing.Size(119, 24);
             this.TownHouseRB.TabIndex = 5;
@@ -176,7 +172,7 @@
             // ApartmentRB
             // 
             this.ApartmentRB.AutoSize = true;
-            this.ApartmentRB.Location = new System.Drawing.Point(6, 73);
+            this.ApartmentRB.Location = new System.Drawing.Point(16, 87);
             this.ApartmentRB.Name = "ApartmentRB";
             this.ApartmentRB.Size = new System.Drawing.Size(109, 24);
             this.ApartmentRB.TabIndex = 4;
@@ -187,7 +183,7 @@
             // VillaRB
             // 
             this.VillaRB.AutoSize = true;
-            this.VillaRB.Location = new System.Drawing.Point(6, 31);
+            this.VillaRB.Location = new System.Drawing.Point(16, 34);
             this.VillaRB.Name = "VillaRB";
             this.VillaRB.Size = new System.Drawing.Size(63, 24);
             this.VillaRB.TabIndex = 3;
@@ -195,26 +191,10 @@
             this.VillaRB.Text = "Villa";
             this.VillaRB.UseVisualStyleBackColor = true;
             // 
-            // institutionalGB
-            // 
-            this.institutionalGB.Controls.Add(this.HospitalCB);
-            this.institutionalGB.Controls.Add(this.UniRB);
-            this.institutionalGB.Controls.Add(this.SchoolRB);
-            this.institutionalGB.Controls.Add(this.UniCB);
-            this.institutionalGB.Controls.Add(this.SchoolCB);
-            this.institutionalGB.Controls.Add(this.HospitalRB);
-            this.institutionalGB.Location = new System.Drawing.Point(318, 198);
-            this.institutionalGB.Name = "institutionalGB";
-            this.institutionalGB.Size = new System.Drawing.Size(246, 171);
-            this.institutionalGB.TabIndex = 5;
-            this.institutionalGB.TabStop = false;
-            this.institutionalGB.Text = "institutional";
-            this.institutionalGB.Enter += new System.EventHandler(this.institutional_Enter);
-            // 
             // HospitalRB
             // 
             this.HospitalRB.AutoSize = true;
-            this.HospitalRB.Location = new System.Drawing.Point(6, 25);
+            this.HospitalRB.Location = new System.Drawing.Point(16, 244);
             this.HospitalRB.Name = "HospitalRB";
             this.HospitalRB.Size = new System.Drawing.Size(92, 24);
             this.HospitalRB.TabIndex = 4;
@@ -232,9 +212,9 @@
             this.DetailsGB.Controls.Add(this.rentTB);
             this.DetailsGB.Controls.Add(this.sizeTb);
             this.DetailsGB.Controls.Add(this.roomsTB);
-            this.DetailsGB.Location = new System.Drawing.Point(12, 44);
+            this.DetailsGB.Location = new System.Drawing.Point(12, -1);
             this.DetailsGB.Name = "DetailsGB";
-            this.DetailsGB.Size = new System.Drawing.Size(300, 223);
+            this.DetailsGB.Size = new System.Drawing.Size(213, 223);
             this.DetailsGB.TabIndex = 6;
             this.DetailsGB.TabStop = false;
             this.DetailsGB.Text = "Details";
@@ -277,7 +257,7 @@
             // 
             // idTB
             // 
-            this.idTB.Location = new System.Drawing.Point(188, 26);
+            this.idTB.Location = new System.Drawing.Point(86, 25);
             this.idTB.Name = "idTB";
             this.idTB.Size = new System.Drawing.Size(100, 26);
             this.idTB.TabIndex = 4;
@@ -287,21 +267,21 @@
             // 
             this.rentTB.BackColor = System.Drawing.SystemColors.HighlightText;
             this.rentTB.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.rentTB.Location = new System.Drawing.Point(188, 173);
+            this.rentTB.Location = new System.Drawing.Point(86, 173);
             this.rentTB.Name = "rentTB";
             this.rentTB.Size = new System.Drawing.Size(100, 26);
             this.rentTB.TabIndex = 3;
             // 
             // sizeTb
             // 
-            this.sizeTb.Location = new System.Drawing.Point(188, 122);
+            this.sizeTb.Location = new System.Drawing.Point(86, 122);
             this.sizeTb.Name = "sizeTb";
             this.sizeTb.Size = new System.Drawing.Size(100, 26);
             this.sizeTb.TabIndex = 2;
             // 
             // roomsTB
             // 
-            this.roomsTB.Location = new System.Drawing.Point(188, 74);
+            this.roomsTB.Location = new System.Drawing.Point(86, 73);
             this.roomsTB.Name = "roomsTB";
             this.roomsTB.Size = new System.Drawing.Size(100, 26);
             this.roomsTB.TabIndex = 1;
@@ -316,38 +296,38 @@
             this.AddressGB.Controls.Add(this.Zipcode);
             this.AddressGB.Controls.Add(this.City);
             this.AddressGB.Controls.Add(this.Street);
-            this.AddressGB.Location = new System.Drawing.Point(12, 273);
+            this.AddressGB.Location = new System.Drawing.Point(12, 239);
             this.AddressGB.Name = "AddressGB";
-            this.AddressGB.Size = new System.Drawing.Size(300, 218);
+            this.AddressGB.Size = new System.Drawing.Size(213, 321);
             this.AddressGB.TabIndex = 7;
             this.AddressGB.TabStop = false;
             this.AddressGB.Text = "Address";
             // 
             // zipTB
             // 
-            this.zipTB.Location = new System.Drawing.Point(136, 121);
+            this.zipTB.Location = new System.Drawing.Point(96, 201);
             this.zipTB.Name = "zipTB";
-            this.zipTB.Size = new System.Drawing.Size(141, 26);
+            this.zipTB.Size = new System.Drawing.Size(100, 26);
             this.zipTB.TabIndex = 13;
             // 
             // cityTB
             // 
-            this.cityTB.Location = new System.Drawing.Point(136, 73);
+            this.cityTB.Location = new System.Drawing.Point(96, 132);
             this.cityTB.Name = "cityTB";
-            this.cityTB.Size = new System.Drawing.Size(141, 26);
+            this.cityTB.Size = new System.Drawing.Size(100, 26);
             this.cityTB.TabIndex = 12;
             // 
             // streetTB
             // 
-            this.streetTB.Location = new System.Drawing.Point(136, 31);
+            this.streetTB.Location = new System.Drawing.Point(96, 63);
             this.streetTB.Name = "streetTB";
-            this.streetTB.Size = new System.Drawing.Size(141, 26);
+            this.streetTB.Size = new System.Drawing.Size(100, 26);
             this.streetTB.TabIndex = 11;
             // 
             // Country
             // 
             this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(7, 164);
+            this.Country.Location = new System.Drawing.Point(6, 273);
             this.Country.Name = "Country";
             this.Country.Size = new System.Drawing.Size(64, 20);
             this.Country.TabIndex = 10;
@@ -357,15 +337,15 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(136, 164);
+            this.comboBox1.Location = new System.Drawing.Point(96, 270);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 28);
+            this.comboBox1.Size = new System.Drawing.Size(100, 28);
             this.comboBox1.TabIndex = 9;
             // 
             // Zipcode
             // 
             this.Zipcode.AutoSize = true;
-            this.Zipcode.Location = new System.Drawing.Point(6, 121);
+            this.Zipcode.Location = new System.Drawing.Point(6, 204);
             this.Zipcode.Name = "Zipcode";
             this.Zipcode.Size = new System.Drawing.Size(69, 20);
             this.Zipcode.TabIndex = 8;
@@ -375,7 +355,7 @@
             // City
             // 
             this.City.AutoSize = true;
-            this.City.Location = new System.Drawing.Point(7, 73);
+            this.City.Location = new System.Drawing.Point(7, 132);
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(35, 20);
             this.City.TabIndex = 7;
@@ -384,7 +364,7 @@
             // Street
             // 
             this.Street.AutoSize = true;
-            this.Street.Location = new System.Drawing.Point(7, 31);
+            this.Street.Location = new System.Drawing.Point(6, 63);
             this.Street.Name = "Street";
             this.Street.Size = new System.Drawing.Size(53, 20);
             this.Street.TabIndex = 6;
@@ -431,9 +411,9 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(570, 44);
+            this.listView1.Location = new System.Drawing.Point(543, 44);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(339, 447);
+            this.listView1.Size = new System.Drawing.Size(378, 447);
             this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -441,7 +421,7 @@
             // 
             this.SchoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SchoolCB.FormattingEnabled = true;
-            this.SchoolCB.Location = new System.Drawing.Point(131, 63);
+            this.SchoolCB.Location = new System.Drawing.Point(157, 297);
             this.SchoolCB.Name = "SchoolCB";
             this.SchoolCB.Size = new System.Drawing.Size(115, 28);
             this.SchoolCB.TabIndex = 5;
@@ -450,7 +430,7 @@
             // 
             this.UniCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UniCB.FormattingEnabled = true;
-            this.UniCB.Location = new System.Drawing.Point(131, 106);
+            this.UniCB.Location = new System.Drawing.Point(157, 355);
             this.UniCB.Name = "UniCB";
             this.UniCB.Size = new System.Drawing.Size(115, 28);
             this.UniCB.TabIndex = 6;
@@ -458,7 +438,7 @@
             // SchoolRB
             // 
             this.SchoolRB.AutoSize = true;
-            this.SchoolRB.Location = new System.Drawing.Point(6, 67);
+            this.SchoolRB.Location = new System.Drawing.Point(16, 301);
             this.SchoolRB.Name = "SchoolRB";
             this.SchoolRB.Size = new System.Drawing.Size(83, 24);
             this.SchoolRB.TabIndex = 7;
@@ -469,7 +449,7 @@
             // UniRB
             // 
             this.UniRB.AutoSize = true;
-            this.UniRB.Location = new System.Drawing.Point(6, 110);
+            this.UniRB.Location = new System.Drawing.Point(16, 359);
             this.UniRB.Name = "UniRB";
             this.UniRB.Size = new System.Drawing.Size(102, 24);
             this.UniRB.TabIndex = 8;
@@ -481,7 +461,7 @@
             // 
             this.HospitalCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HospitalCB.FormattingEnabled = true;
-            this.HospitalCB.Location = new System.Drawing.Point(131, 21);
+            this.HospitalCB.Location = new System.Drawing.Point(157, 240);
             this.HospitalCB.Name = "HospitalCB";
             this.HospitalCB.Size = new System.Drawing.Size(115, 28);
             this.HospitalCB.TabIndex = 9;
@@ -490,7 +470,7 @@
             // 
             this.VillaCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.VillaCB.FormattingEnabled = true;
-            this.VillaCB.Location = new System.Drawing.Point(131, 27);
+            this.VillaCB.Location = new System.Drawing.Point(157, 30);
             this.VillaCB.Name = "VillaCB";
             this.VillaCB.Size = new System.Drawing.Size(115, 28);
             this.VillaCB.TabIndex = 10;
@@ -499,7 +479,7 @@
             // 
             this.ApartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ApartmentCB.FormattingEnabled = true;
-            this.ApartmentCB.Location = new System.Drawing.Point(131, 69);
+            this.ApartmentCB.Location = new System.Drawing.Point(157, 77);
             this.ApartmentCB.Name = "ApartmentCB";
             this.ApartmentCB.Size = new System.Drawing.Size(115, 28);
             this.ApartmentCB.TabIndex = 11;
@@ -508,7 +488,7 @@
             // 
             this.TownhouseCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TownhouseCB.FormattingEnabled = true;
-            this.TownhouseCB.Location = new System.Drawing.Point(131, 114);
+            this.TownhouseCB.Location = new System.Drawing.Point(157, 122);
             this.TownhouseCB.Name = "TownhouseCB";
             this.TownhouseCB.Size = new System.Drawing.Size(115, 28);
             this.TownhouseCB.TabIndex = 12;
@@ -517,7 +497,7 @@
             // 
             this.StoreCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StoreCB.FormattingEnabled = true;
-            this.StoreCB.Location = new System.Drawing.Point(131, 38);
+            this.StoreCB.Location = new System.Drawing.Point(157, 464);
             this.StoreCB.Name = "StoreCB";
             this.StoreCB.Size = new System.Drawing.Size(115, 28);
             this.StoreCB.TabIndex = 10;
@@ -526,10 +506,28 @@
             // 
             this.WarehouseCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WarehouseCB.FormattingEnabled = true;
-            this.WarehouseCB.Location = new System.Drawing.Point(131, 76);
+            this.WarehouseCB.Location = new System.Drawing.Point(157, 513);
             this.WarehouseCB.Name = "WarehouseCB";
             this.WarehouseCB.Size = new System.Drawing.Size(115, 28);
             this.WarehouseCB.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 202);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Institutional";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(0, 428);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Commercial";
             // 
             // Form1
             // 
@@ -543,21 +541,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddressGB);
             this.Controls.Add(this.DetailsGB);
-            this.Controls.Add(this.institutionalGB);
             this.Controls.Add(this.residentialGB);
-            this.Controls.Add(this.commercialGB);
             this.Controls.Add(this.ChangeBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.AddBtn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.commercialGB.ResumeLayout(false);
-            this.commercialGB.PerformLayout();
             this.residentialGB.ResumeLayout(false);
             this.residentialGB.PerformLayout();
-            this.institutionalGB.ResumeLayout(false);
-            this.institutionalGB.PerformLayout();
             this.DetailsGB.ResumeLayout(false);
             this.DetailsGB.PerformLayout();
             this.AddressGB.ResumeLayout(false);
@@ -572,9 +564,7 @@
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button ChangeBtn;
-        private System.Windows.Forms.GroupBox commercialGB;
         private System.Windows.Forms.GroupBox residentialGB;
-        private System.Windows.Forms.GroupBox institutionalGB;
         private System.Windows.Forms.GroupBox DetailsGB;
         private System.Windows.Forms.Label RentTxt;
         private System.Windows.Forms.Label SizeTxt;
@@ -614,6 +604,8 @@
         private System.Windows.Forms.ComboBox TownhouseCB;
         private System.Windows.Forms.ComboBox ApartmentCB;
         private System.Windows.Forms.ComboBox VillaCB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
