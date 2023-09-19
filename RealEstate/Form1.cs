@@ -34,7 +34,7 @@ namespace RealEstate
 
         private void initializeGUI() {
             this.Text += " by Fenix Kanat";
-            listView1.Text = String.Empty;
+            listBox1.Text = String.Empty;
 
             //Textboxes for details
             idTB.Text = String.Empty;
@@ -46,6 +46,9 @@ namespace RealEstate
             streetTB.Text = String.Empty;
             cityTB.Text = String.Empty;
             zipTB.Text = String.Empty;
+
+
+         
 
 
             foreach (var type in Enum.GetValues(typeof(UniversityType)))
@@ -81,6 +84,10 @@ namespace RealEstate
 
             foreach (var type in Enum.GetValues(typeof(typeOfApartment))) {
                 ApartmentCB.Items.Add(type);
+            }
+
+            foreach (var type in Enum.GetValues(typeof(Countries))) {
+                countryCB.Items.Add(type);
             }
 
         }
@@ -304,6 +311,31 @@ namespace RealEstate
             return check;
         }
 
+        private bool checkAddressField() {
+
+            string input = "";
+           bool check = true;
+
+            if (streetTB.Text == input) {
+                MessageBox.Show("Please enter street");
+                check = false;
+            }
+
+            if (cityTB.Text == input) {
+                MessageBox.Show("Please enter city");
+            }
+
+            if (zipTB.Text == input) {
+                MessageBox.Show("Please enter zipcode");
+            }
+
+            if (countryCB.Items.Count < 0) {
+                MessageBox.Show("Please choose a country");
+            }
+
+            return check;
+        }
+
 
 
         private bool ReadInputResidential() {
@@ -338,10 +370,17 @@ namespace RealEstate
 
         }
 
+        private bool ReadAddressInput() {
+
+            //All of them needs to be true in order to be valid
+            bool isValidAddress = checkAddressField();
+
+            return isValidAddress;
+        }
 
         private void UpdateLBox()
         {
-            listView1.Items.Clear();
+            listBox1.Items.Clear();
 
 
 
@@ -354,62 +393,74 @@ namespace RealEstate
 
         private void Add_Click(object sender, EventArgs e)
         {
+            if (ReadAddressInput()){
+                string textValue = $"Street: {streetTB.Text}, City: {cityTB.Text}, ZipCode: {zipTB.Text}, Country: {countryCB.SelectedItem}";
+                listBox1.Items.Add(textValue);
+            }
             if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
 
 
                 if (VillaRB.Checked && VillaCB.SelectedIndex != -1) {
-                    string combinedValue = $"{VillaRB.Text} : {VillaCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{VillaRB.Text} : {VillaCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue);
                 }
 
                 if (ApartmentRB.Checked && ApartmentCB.SelectedIndex != -1) {
-                    string combinedValue = $"{ApartmentRB.Text}:{ApartmentCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{ApartmentRB.Text}:{ApartmentCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text} ";
+                    listBox1.Items.Add(combinedValue);
                 }
 
                 if (TownHouseRB.Checked && TownhouseCB.SelectedIndex != -1) {
-                    string combinedValue = $"{TownHouseRB.Text}:{TownhouseCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{TownHouseRB.Text}:{TownhouseCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue);
                 }
                 if (SchoolRB.Checked && SchoolCB.SelectedIndex != -1)
                 {
-                    string combinedValue = $"{SchoolRB.Text} : {SchoolCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{SchoolRB.Text} : {SchoolCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue);
                 }
 
                 if (UniRB.Checked && UniCB.SelectedIndex != -1)  
                 {
-                    string combinedValue = $"{UniRB.Text} : {UniCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{UniRB.Text} : {UniCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue);
                 }
 
                 if (HospitalRB.Checked && HospitalCB.SelectedIndex != -1) {
-                    string combinedValue = $"{HospitalRB.Text} : {HospitalCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{HospitalRB.Text} : {HospitalCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue);
                 }
 
                 if (StoreRB.Checked && StoreCB.SelectedIndex != -1) {
-                    string combinedValue = $"{StoreRB.Text}:{StoreCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue));
+                    string combinedValue = $"{StoreRB.Text}:{StoreCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue);
                 }
 
                 if (WareHouseRB.Checked && WarehouseCB.SelectedIndex != -1) {
-                    string combinedValue = $"{WareHouseRB.Text}:{WarehouseCB.SelectedItem}";
-                    listView1.Items.Add(new ListViewItem(combinedValue)); 
+                    string combinedValue = $"{WareHouseRB.Text}:{WarehouseCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    listBox1.Items.Add(combinedValue); 
+
 
                 }
 
+              //  listView1.Items.Add(new ListViewItem(new string('-', 60)));
+
+/*
                 ListViewItem item = new ListViewItem(idTB.Text);
                 ListViewItem item2 = new ListViewItem(roomsTB.Text);
                 ListViewItem item3 = new ListViewItem(sizeTb.Text);
                 ListViewItem item4 = new ListViewItem(rentTB.Text);
                 
-                listView1.Items.Add(item);
-                listView1.Items.Add(item2);
-                listView1.Items.Add(item3);
-                listView1.Items.Add(item4);
 
-          
+                listBox1.Items.Add(idTB.Text);
+                listBox1.Items.Add(roomsTB.Text);
+                listBox1.Items.Add(sizeTb.Text);
+                listBox1.Items.Add(rentTB.Text);
+
+                */
+
+
+
             }
 
 
