@@ -250,50 +250,52 @@ namespace RealEstate
 
 
                 if (VillaRB.Checked && VillaCB.SelectedIndex != -1) {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {VillaRB.Text} : {VillaCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({VillaRB.Text} : { VillaCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (ApartmentRB.Checked && ApartmentCB.SelectedIndex != -1) {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {ApartmentRB.Text}:{ApartmentCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text} ";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({ApartmentRB.Text}:{ ApartmentCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text} ";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (TownHouseRB.Checked && TownhouseCB.SelectedIndex != -1) {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {TownHouseRB.Text}:{TownhouseCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({TownHouseRB.Text}:{ TownhouseCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
                 if (SchoolRB.Checked && SchoolCB.SelectedIndex != -1)
                 {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {SchoolRB.Text} : {SchoolCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({SchoolRB.Text} : { SchoolCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (UniRB.Checked && UniCB.SelectedIndex != -1)  
                 {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {UniRB.Text} : {UniCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({UniRB.Text} : { UniCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (HospitalRB.Checked && HospitalCB.SelectedIndex != -1) {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {HospitalRB.Text} : {HospitalCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({HospitalRB.Text} : { HospitalCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (StoreRB.Checked && StoreCB.SelectedIndex != -1) {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {StoreRB.Text}:{StoreCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({StoreRB.Text}: { StoreCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (WareHouseRB.Checked && WarehouseCB.SelectedIndex != -1) {
-                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {WareHouseRB.Text}:{WarehouseCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({WareHouseRB.Text}: { WarehouseCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue); 
 
 
                 }
 
+
                 if (ReadAddressInput())
                 {
+                    listBox1.Items.Add(new string(' ', 180));
                     string textValue = $"Street: {streetTB.Text}, City: {cityTB.Text}, ZipCode: {zipTB.Text}, Country: {countryCB.SelectedItem}";
                     listBox1.Items.Add(textValue);
                     listBox1.Items.Add(new string('-', 180));
@@ -306,6 +308,7 @@ namespace RealEstate
 
         private void Delete_Click(object sender, EventArgs e)
         {
+
 
         }
 
