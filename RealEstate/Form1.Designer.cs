@@ -52,15 +52,10 @@
             this.cityTB = new System.Windows.Forms.TextBox();
             this.streetTB = new System.Windows.Forms.TextBox();
             this.Country = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.countryCB = new System.Windows.Forms.ComboBox();
             this.Zipcode = new System.Windows.Forms.Label();
             this.City = new System.Windows.Forms.Label();
             this.Street = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.SchoolCB = new System.Windows.Forms.ComboBox();
             this.UniCB = new System.Windows.Forms.ComboBox();
             this.SchoolRB = new System.Windows.Forms.RadioButton();
@@ -73,6 +68,7 @@
             this.WarehouseCB = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.residentialGB.SuspendLayout();
             this.DetailsGB.SuspendLayout();
             this.AddressGB.SuspendLayout();
@@ -80,7 +76,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(607, 516);
+            this.AddBtn.Location = new System.Drawing.Point(535, 516);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(91, 44);
             this.AddBtn.TabIndex = 0;
@@ -90,7 +86,7 @@
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(718, 516);
+            this.DeleteBtn.Location = new System.Drawing.Point(632, 516);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(86, 44);
             this.DeleteBtn.TabIndex = 1;
@@ -100,7 +96,7 @@
             // 
             // ChangeBtn
             // 
-            this.ChangeBtn.Location = new System.Drawing.Point(823, 516);
+            this.ChangeBtn.Location = new System.Drawing.Point(724, 516);
             this.ChangeBtn.Name = "ChangeBtn";
             this.ChangeBtn.Size = new System.Drawing.Size(86, 44);
             this.ChangeBtn.TabIndex = 2;
@@ -155,7 +151,7 @@
             this.residentialGB.Size = new System.Drawing.Size(298, 561);
             this.residentialGB.TabIndex = 4;
             this.residentialGB.TabStop = false;
-            this.residentialGB.Text = "residential";
+            this.residentialGB.Text = "Residential";
             this.residentialGB.Enter += new System.EventHandler(this.residential_Enter);
             // 
             // TownHouseRB
@@ -292,7 +288,7 @@
             this.AddressGB.Controls.Add(this.cityTB);
             this.AddressGB.Controls.Add(this.streetTB);
             this.AddressGB.Controls.Add(this.Country);
-            this.AddressGB.Controls.Add(this.comboBox1);
+            this.AddressGB.Controls.Add(this.countryCB);
             this.AddressGB.Controls.Add(this.Zipcode);
             this.AddressGB.Controls.Add(this.City);
             this.AddressGB.Controls.Add(this.Street);
@@ -333,14 +329,14 @@
             this.Country.TabIndex = 10;
             this.Country.Text = "Country";
             // 
-            // comboBox1
+            // countryCB
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 270);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 28);
-            this.comboBox1.TabIndex = 9;
+            this.countryCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.countryCB.FormattingEnabled = true;
+            this.countryCB.Location = new System.Drawing.Point(96, 270);
+            this.countryCB.Name = "countryCB";
+            this.countryCB.Size = new System.Drawing.Size(100, 28);
+            this.countryCB.TabIndex = 9;
             // 
             // Zipcode
             // 
@@ -369,53 +365,6 @@
             this.Street.Size = new System.Drawing.Size(53, 20);
             this.Street.TabIndex = 6;
             this.Street.Text = "Street";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(656, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(714, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Rooms";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(794, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Size";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(865, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Rent";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(543, 44);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(378, 447);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // SchoolCB
             // 
@@ -529,16 +478,21 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Commercial";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(535, 6);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(649, 504);
+            this.listBox1.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 572);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1254, 572);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.AddressGB);
             this.Controls.Add(this.DetailsGB);
             this.Controls.Add(this.residentialGB);
@@ -555,7 +509,6 @@
             this.AddressGB.ResumeLayout(false);
             this.AddressGB.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -585,15 +538,10 @@
         private System.Windows.Forms.Label City;
         private System.Windows.Forms.Label Street;
         private System.Windows.Forms.Label Country;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox countryCB;
         private System.Windows.Forms.TextBox zipTB;
         private System.Windows.Forms.TextBox cityTB;
         private System.Windows.Forms.TextBox streetTB;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ComboBox UniCB;
         private System.Windows.Forms.ComboBox SchoolCB;
         private System.Windows.Forms.RadioButton UniRB;
@@ -606,6 +554,7 @@
         private System.Windows.Forms.ComboBox VillaCB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
