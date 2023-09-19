@@ -308,9 +308,24 @@ namespace RealEstate
 
         private void Delete_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                int selectedIndex = listBox1.SelectedIndex;
 
+                if ((selectedIndex + 2) < listBox1.Items.Count)
+                {
+                    listBox1.Items.RemoveAt(selectedIndex + 2);
+                    listBox1.Items.RemoveAt(selectedIndex + 1);
+                }
 
+                listBox1.Items.RemoveAt(selectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please select an estate to delete.");
+            }
         }
+
 
         private void Change_Click(object sender, EventArgs e)
         {

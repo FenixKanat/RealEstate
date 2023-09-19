@@ -8,5 +8,6 @@ namespace RealEstate
 {
     internal class Estate
     {
+      
     }
 }

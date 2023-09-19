@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal abstract class Commercial:IEstate
+    internal abstract class Commercial:Estate
     {
         public int ID { get; set; }
 
