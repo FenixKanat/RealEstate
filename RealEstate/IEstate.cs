@@ -17,5 +17,7 @@ namespace RealEstate
         int Rooms { get; set; }
 
         double Rent { get; set; }
+
+ 
     }
 }
