@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RealEstate
 {
     public partial class Form1 : Form
     {
+
+        private HashSet<int> usedIDs = new HashSet<int>();
+
         Residential residential;
         Institutional institutional;
         Commercial commercial;
@@ -93,9 +97,8 @@ namespace RealEstate
         }
 
 
-        //Checking Residential ID and Rooms & Size and rent
 
-        private bool checkResidentialID() {
+        private bool checkEstateID() {
 
 
             int number = 0;
@@ -103,9 +106,19 @@ namespace RealEstate
 
             if (int.TryParse(idTB.Text, out number) && number >= 0)
             {
-                residential.ID = number;
-            }
-            else {
+                if (usedIDs.Contains(number))
+                {
+                    MessageBox.Show("This ID is already in use! ");
+                    check = false;
+
+                }
+                else {
+                    residential.ID = number;
+                    institutional.ID = number;
+                    commercial.ID = number;
+                    usedIDs.Add(number);
+                }
+            } else {
                 MessageBox.Show("invalid ID");
                 check = false;
             }
@@ -113,15 +126,18 @@ namespace RealEstate
             return check;
         }
 
-        private bool checkResidentialRooms() {
+        private bool checkEstateRooms() {
             int number = 1;
             bool check = true;
 
             if (int.TryParse(roomsTB.Text, out number) && number >= 1)
             {
+               
                 residential.Rooms = number;
-            }
-            else {
+                institutional.Rooms = number;
+                commercial.Rooms = number;
+            
+            } else {
                 MessageBox.Show("invalid number of room");
                 check = false;
             }
@@ -129,13 +145,15 @@ namespace RealEstate
             return check; 
         }
 
-        private bool checkResidentialSize() {
+        private bool checkEstateSize() {
             double number = 1.0;
             bool check = true;
 
             if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
             {
                 residential.Size = number;
+                institutional.Size = number;
+                commercial.Size = number;
             }
             else {
                 MessageBox.Show("Invalid size");
@@ -145,7 +163,7 @@ namespace RealEstate
             return check; 
         }
 
-        private bool checkResidentialRent()
+        private bool checkEstateRent()
         {
             double number = 1.0;
             bool check = true;
@@ -153,153 +171,7 @@ namespace RealEstate
             if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
             {
                 residential.Rent = number;
-            }
-            else
-            {
-                MessageBox.Show("Invalid rent");
-                check = false;
-            }
-
-            return check;
-        }
-
-        //Checking institutional ID,rooms, rent and size: 
-
-        private bool checkInstitutionalID() {
-
-
-         int number = 0;
-         bool check = true;
-
-            if (int.TryParse(idTB.Text, out number) && number >= 0)
-            {
-                institutional.ID = number;
-            }
-            else {
-                MessageBox.Show("Invalid ID");
-                check = false;
-            }
-
-            return check; 
-    }
-
-        private bool checkInstitutionalRooms() {
-            int number = 1;
-            bool check = true;
-
-            if (int.TryParse(roomsTB.Text, out number) && number >= 1)
-            {
-                institutional.Rooms = number;
-            }
-            else {
-                MessageBox.Show("Invalid number of rooms");
-                check = false;
-            }
-
-            return check;
-        }
-
-        private bool checkInstitutionalSize()
-        {
-            double number = 0.0;
-            bool check = true;
-
-            if (double.TryParse(sizeTb.Text, out number) && number >= 0.0)
-            {
-                institutional.Size = number;
-            }
-            else
-            {
-                MessageBox.Show("Invalid size");
-                check = false;
-            }
-
-            return check;
-        }
-
-        private bool checkInstitutionalRent()
-        {
-            double number = 0.0;
-            bool check = true;
-
-            if (double.TryParse(rentTB.Text, out number) && number >= 0.0)
-            {
                 institutional.Rent = number;
-            }
-            else
-            {
-                MessageBox.Show("Invalid rent");
-                check = false;
-            }
-
-            return check;
-        }
-
-        //Check Commercial ID, roooms, size and rent: 
-
-        private bool checkCommercialID()
-        {
-
-
-            int number = 0;
-            bool check = true;
-
-            if (int.TryParse(idTB.Text, out number) && number >= 0)
-            {
-                commercial.ID = number;
-            }
-            else
-            {
-                MessageBox.Show("Invalid ID");
-                check = false;
-            }
-
-            return check;
-        }
-
-        private bool checkCommercialRooms()
-        {
-            int number = 1;
-            bool check = true;
-
-            if (int.TryParse(roomsTB.Text, out number) && number >= 1)
-            {
-                commercial.Rooms = number;
-            }
-            else
-            {
-                MessageBox.Show("Invalid number of rooms");
-                check = false;
-            }
-
-            return check;
-        }
-
-        private bool checkCommercialSize()
-        {
-            double number = 0.0;
-            bool check = true;
-
-            if (double.TryParse(sizeTb.Text, out number) && number >= 1.0)
-            {
-                commercial.Size = number;
-            }
-            else
-            {
-                MessageBox.Show("Invalid size");
-                check = false;
-            }
-
-            return check;
-        }
-
-        private bool checkCommercialRent()
-        {
-            double number = 0.0;
-            bool check = true;
-
-            if (double.TryParse(rentTB.Text, out number) && number >= 1.0)
-            {
                 commercial.Rent = number;
             }
             else
@@ -311,6 +183,8 @@ namespace RealEstate
             return check;
         }
 
+
+       
         private bool checkAddressField() {
 
             string input = "";
@@ -338,33 +212,11 @@ namespace RealEstate
 
 
 
-        private bool ReadInputResidential() {
-            bool isIdValid = checkResidentialID();
-            bool isRoomsValid = checkResidentialRooms();
-            bool isSizeValid = checkResidentialSize();
-            bool isRentValid = checkResidentialRent();
-
-            return isIdValid && isRoomsValid && isSizeValid && isRentValid;
-
-        }
-
-        private bool ReadInputCommercial()
-        {
-            bool isIdValid = checkCommercialID();
-            bool isRoomsValid = checkCommercialRooms();
-            bool isSizeValid = checkCommercialSize();
-            bool isRentValid = checkCommercialRent();
-
-            return isIdValid && isRoomsValid && isSizeValid && isRentValid;
-
-        }
-
-        private bool ReadInputInstitutional()
-        {
-            bool isIdValid = checkInstitutionalID();
-            bool isRoomsValid = checkInstitutionalRooms();
-            bool isSizeValid = checkInstitutionalSize();
-            bool isRentValid = checkInstitutionalRent();
+        private bool ReadEstateInput() {
+            bool isIdValid = checkEstateID();
+            bool isRoomsValid = checkEstateRooms();
+            bool isSizeValid = checkEstateSize();
+            bool isRentValid = checkEstateRent();
 
             return isIdValid && isRoomsValid && isSizeValid && isRentValid;
 
@@ -393,73 +245,59 @@ namespace RealEstate
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (ReadAddressInput()){
-                string textValue = $"Street: {streetTB.Text}, City: {cityTB.Text}, ZipCode: {zipTB.Text}, Country: {countryCB.SelectedItem}";
-                listBox1.Items.Add(textValue);
-            }
-            if (ReadInputResidential() && ReadInputCommercial() && ReadInputInstitutional()){
+    
+            if (ReadEstateInput()){
 
 
                 if (VillaRB.Checked && VillaCB.SelectedIndex != -1) {
-                    string combinedValue = $"{VillaRB.Text} : {VillaCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {VillaRB.Text} : {VillaCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (ApartmentRB.Checked && ApartmentCB.SelectedIndex != -1) {
-                    string combinedValue = $"{ApartmentRB.Text}:{ApartmentCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text} ";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {ApartmentRB.Text}:{ApartmentCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text} ";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (TownHouseRB.Checked && TownhouseCB.SelectedIndex != -1) {
-                    string combinedValue = $"{TownHouseRB.Text}:{TownhouseCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {TownHouseRB.Text}:{TownhouseCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
                 if (SchoolRB.Checked && SchoolCB.SelectedIndex != -1)
                 {
-                    string combinedValue = $"{SchoolRB.Text} : {SchoolCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {SchoolRB.Text} : {SchoolCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (UniRB.Checked && UniCB.SelectedIndex != -1)  
                 {
-                    string combinedValue = $"{UniRB.Text} : {UniCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {UniRB.Text} : {UniCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (HospitalRB.Checked && HospitalCB.SelectedIndex != -1) {
-                    string combinedValue = $"{HospitalRB.Text} : {HospitalCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {HospitalRB.Text} : {HospitalCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (StoreRB.Checked && StoreCB.SelectedIndex != -1) {
-                    string combinedValue = $"{StoreRB.Text}:{StoreCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {StoreRB.Text}:{StoreCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue);
                 }
 
                 if (WareHouseRB.Checked && WarehouseCB.SelectedIndex != -1) {
-                    string combinedValue = $"{WareHouseRB.Text}:{WarehouseCB.SelectedItem}, ID: {idTB.Text}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+                    string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: {WareHouseRB.Text}:{WarehouseCB.SelectedItem}, Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
                     listBox1.Items.Add(combinedValue); 
 
 
                 }
 
-              //  listView1.Items.Add(new ListViewItem(new string('-', 60)));
-
-/*
-                ListViewItem item = new ListViewItem(idTB.Text);
-                ListViewItem item2 = new ListViewItem(roomsTB.Text);
-                ListViewItem item3 = new ListViewItem(sizeTb.Text);
-                ListViewItem item4 = new ListViewItem(rentTB.Text);
-                
-
-                listBox1.Items.Add(idTB.Text);
-                listBox1.Items.Add(roomsTB.Text);
-                listBox1.Items.Add(sizeTb.Text);
-                listBox1.Items.Add(rentTB.Text);
-
-                */
-
-
+                if (ReadAddressInput())
+                {
+                    string textValue = $"Street: {streetTB.Text}, City: {cityTB.Text}, ZipCode: {zipTB.Text}, Country: {countryCB.SelectedItem}";
+                    listBox1.Items.Add(textValue);
+                    listBox1.Items.Add(new string('-', 180));
+                }
 
             }
 
