@@ -245,8 +245,12 @@ namespace RealEstate
 
         private void Add_Click(object sender, EventArgs e)
         {
-    
-            if (ReadEstateInput()){
+
+            bool isEstateValid = ReadEstateInput();
+            bool isAddressValid = ReadAddressInput();
+
+            if (isEstateValid && isAddressValid)
+            {
 
 
                 if (VillaRB.Checked && VillaCB.SelectedIndex != -1) {
@@ -305,15 +309,27 @@ namespace RealEstate
 
 
         }
-
         private void Delete_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex >= 0)
             {
                 int selectedIndex = listBox1.SelectedIndex;
 
-                if ((selectedIndex + 2) < listBox1.Items.Count)
+                string selectedItemText = listBox1.Items[selectedIndex].ToString();
+                string idPrefix = "Estate ID: ";
+                int idEndIndex = selectedItemText.IndexOf(",", StringComparison.Ordinal);
+                if (selectedItemText.StartsWith(idPrefix) && idEndIndex != -1)
                 {
+                    string idString = selectedItemText.Substring(idPrefix.Length, idEndIndex - idPrefix.Length).Trim();
+                    if (int.TryParse(idString, out int id))
+                    {
+                        usedIDs.Remove(id);
+                    }
+                }
+
+                if ((selectedIndex + 3) < listBox1.Items.Count)
+                {
+                    listBox1.Items.RemoveAt(selectedIndex + 3);
                     listBox1.Items.RemoveAt(selectedIndex + 2);
                     listBox1.Items.RemoveAt(selectedIndex + 1);
                 }
@@ -327,8 +343,37 @@ namespace RealEstate
         }
 
 
+
+
+
+
         private void Change_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                bool isEstateValid = ReadEstateInput();
+                bool isAddressValid = ReadAddressInput();
+
+                if (isEstateValid && isAddressValid)
+                {
+                    
+                    if (VillaRB.Checked && VillaCB.SelectedIndex != -1)
+                    {
+                        string combinedValue = $"Estate ID: {idTB.Text}, Estate Type: ({VillaRB.Text} : {VillaCB.SelectedItem}), Rooms: {roomsTB.Text}, Size: {sizeTb.Text}, Rent: {rentTB.Text}";
+
+                        listBox1.Items[listBox1.SelectedIndex] = combinedValue; 
+
+                      
+                        listBox1.Items[listBox1.SelectedIndex + 1] = $"Street: {streetTB.Text}, City: {cityTB.Text}, ZipCode: {zipTB.Text}, Country: {countryCB.SelectedItem}";
+                    }
+
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an estate to change.");
+            }
 
         }
 

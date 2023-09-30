@@ -6,15 +6,8 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal abstract class Residential : IEstate
+    internal abstract class Residential : Estate
     {
-        public int ID { get; set; }
-
-        public double Size { get; set; }
-
-        public int Rooms { get; set; }
-
-        public double Rent { get; set; }
-        public Address Address { get; set; }
+        
     }
 }

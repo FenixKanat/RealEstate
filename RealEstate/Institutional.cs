@@ -7,15 +7,7 @@ using System.Threading.Tasks;
 
 namespace RealEstate
 {
-    internal abstract class Institutional:IEstate
+    internal abstract class Institutional:Estate
     {
-        public int ID { get; set; }
-
-        public double Size { get; set; }
-
-        public int Rooms { get; set; }
-
-        public double Rent { get; set; }
-        public Address Address { get; set; }
     }
 }
